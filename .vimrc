@@ -27,6 +27,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'yuroyoro/monday'
 
 Bundle 'Align'
 Bundle 'bufexplorer.zip'
