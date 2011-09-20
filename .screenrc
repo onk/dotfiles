@@ -1,0 +1,31 @@
+escape ^t^t
+startup_message off
+autodetach on
+defscrollback 100000
+defmonitor on
+
+defbce on
+term xterm-256color
+
+screen 1
+bind c eval 'screen 1'
+
+bind w windowlist -b
+hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %= %{=b kb}%y/%m/%d %{=b km}%c %< "
+
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind s eval 'split' 'focus' 'screen 1'
+bind q only
+bind -c resize ^]  command
+bind -c resize j eval 'resize +1' 'command -c resize'
+bind -c resize k eval 'resize -1' 'command -c resize'
+
+#
+# Cyclic traversal
+#
+bind              ^n   eval "next" "echo 'Next window'"     "command -c traversal"
+bind              ^p   eval "prev" "echo 'Previous window'" "command -c traversal"
+bind -c traversal ^n   eval "next" "echo 'Next window'"     "command -c traversal"
+bind -c traversal ^p   eval "prev" "echo 'Previous window'" "command -c traversal"
+bind -c traversal ^a   command
+
