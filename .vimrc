@@ -144,6 +144,12 @@ nnoremap #  #zvzz
 nnoremap g* g*zvzz
 nnoremap g# g#zvzz
 
+" brackets"
+inoremap {} {}<LEFT>
+inoremap [] []<LEFT>
+inoremap () ()<LEFT>
+inoremap <> <><LEFT>
+
 " 行頭で h を押すと折畳を閉じる。
 nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
 " 折畳上で l を押すと折畳を開く。
