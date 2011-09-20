@@ -125,6 +125,10 @@ nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 
+nnoremap <silent> <C-x>1 :only<CR>
+nnoremap <silent> <C-x>2 :sp<CR>
+nnoremap <silent> <C-x>3 :vsp<CR>
+
 " window resize
 nnoremap w+ 4<C-w>+
 nnoremap w- 4<C-w>-
