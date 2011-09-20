@@ -1,0 +1,14 @@
+set show-line-numbers = yes
+set line-number-interval = 1
+
+set author-width = 7
+set show-refs = yes
+set show-rev-graph = yes
+set show-date = local
+
+# bind
+bind generic g move-first-line
+bind generic G move-last-line
+
+bind generic R !git revert %(commit)
+
