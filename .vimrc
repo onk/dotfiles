@@ -182,10 +182,10 @@ nnoremap <Esc><Esc> :nohlsearch<CR>
 " plugin
 " ----------------------------------------------------------------------
 " Shougo/neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+"
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Shougo/vimproc
 
