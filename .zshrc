@@ -5,11 +5,9 @@ autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 autoload -Uz is-at-least
 autoload -Uz history-search-end
-autoload -Uz predict-on
 compinit
 promptinit
 colors
-predict-on
 
 # 色設定
 eval `dircolors ~/.colorrc`
