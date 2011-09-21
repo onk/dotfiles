@@ -1,0 +1,22 @@
+[user]
+  name = onk
+  email = takafumi.onaka@gmail.com
+
+[color]
+  ui = auto
+
+[alias]
+  st = status -s
+  br = branch
+  co = checkout
+  lg = log --graph --all --color --date=relative
+  l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
+  dc = diff --cached
+
+[core]
+  excludesfile = ~/.gitignore
+  pager = lv -c
+
+[format]
+  pretty = %h -%d %s (%cr)
+
