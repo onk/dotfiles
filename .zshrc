@@ -1,83 +1,52 @@
-#export LC_ALL=ja_JP.UTF-8
-
-# ------------------------------
-# 補完周り
-# -----------------------------/
-# 補完設定
 autoload -Uz compinit
+autoload -Uz promptinit
+autoload -Uz colors
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
+autoload -Uz is-at-least
+autoload -Uz history-search-end
+autoload -Uz predict-on
 compinit
-source ~/.zsh/plugin/cdd
-#source ~/.zsh/plugin/incr*.zsh
+promptinit
+colors
+predict-on
+
+# 色設定
+eval `dircolors ~/.colorrc`
 
 # ディレクトリ名だけで cd
 setopt auto_cd
-
-# 色の指定を%{$fg[red]%}みたいに人に優しい指定の仕方が出来るようになる
-autoload -Uz colors
-colors
-
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-# プロンプトに $HOST 等が使えるようになる(?)
+# プロンプト中の変数を展開する
 setopt prompt_subst
-
-# 実行後はコピペしやすいように右プロンプトを削除する
+# 実行後に右プロンプトを削除する
 setopt transient_rprompt
-
-# # # git branch を表示
-# autoload -Uz vcs_info
-# zstyle ':vcs_info:*' enable git svn hg bzr
-# zstyle ':vcs_info:*' formats '(%s)-[%b]'
-# zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-# zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
-# zstyle ':vcs_info:bzr:*' use-simple true
-#
-# autoload -Uz is-at-least
-# if is-at-least 4.3.10; then
-#   # この check-for-changes が今回の設定するところ
-#   zstyle ':vcs_info:git:*' check-for-changes true
-#   zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
-#   zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
-#   zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
-#   zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
-# fi
-#
-# function _update_vcs_info_msg() {
-#   psvar=()
-#   LANG=en_US.UTF-8 vcs_info
-#   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-# }
-#
-# autoload -Uz add-zsh-hook
-# add-zsh-hook precmd _update_vcs_info_msg
-#
-# プロンプト。右側にカレントディレクトリを表示している。
-PROMPT="%{${fg[red]}%}%n\$%{${reset_color}%} "
-PROMPT2="%{${fg[red]}%}%_\$%{${reset_color}%} "
-SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-  PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
-RPROMPT="[%~] %1(v|%F{green}%1v%f|)"
-
 # 移動したディレクトリを記録しておく。"cd -[Tab]"で移動履歴を一覧
 setopt auto_pushd
 setopt pushd_ignore_dups
-
-# コマンド履歴。
+# コマンド履歴
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt extended_history
 function history-all { history -E 1 }
 
+# 実行時間を報告する
+REPORTTIME=3
+# C-w で削除する時に / を区切り文字とするように *?_-.[]~=&;!#$%^(){}<>
+WORDCHARS=${WORDCHARS:s,/,,}
+
 # 他の画面とコマンド履歴を共有
 setopt share_history
 
-# 補完候補を詰めて表示する
-setopt list_packed
-
-# 補完候補にエイリアスを含める
-setopt complete_aliases
+# 補完
+setopt list_packed      # 補完候補をつめて表示する
+setopt auto_menu        # TAB で順に補完候補を切り替える
+setopt auto_list        # 複数の補完候補があったときに、そのリストを自動的に表示
+setopt complete_in_word # 補完開始時にカーソルは単語の終端になくても良い。
+setopt list_types       # 種類を示すマーク表示をつける(ls -fと同じもの)
+setopt auto_param_keys  # カッコの対応などを自動的に補完
+setopt auto_param_slash # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt complete_aliases # 補完候補にエイリアスを含める
 
 # コマンドにsudoを付けてもきちんと補完出来るようにする
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
@@ -98,58 +67,39 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 
-# 入力履歴から補完。Ctrl+P, Ctrl+N
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-
-# glob (*) での履歴のインクリメンタル検索
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
-
-# ------------------------------
-# funcion
-# ------------------------------
-# cd したら ls
-#function cd() {builtin cd $@ && ls -v -F --color=auto}
-function chpwd() {
-  ls -Fl --color
-  _reg_pwd_screennum
+# @see http://d.hatena.ne.jp/mollifier/20100906/p1
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+zstyle ':vcs_info:svn:*' branchformat '%b:r%r'
+if is-at-least 4.3.10; then
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
+  zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
+  zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
+  zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
+fi
+function _update_vcs_info_msg() {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+add-zsh-hook precmd _update_vcs_info_msg
+RPROMPT="%1(v|%F{green}%1v%f|)"
 
-export LANG=ja_JP.UTF-8
-export LESS='--tabs=4 --no-init --LONG-PROMPT --ignore-case'
-export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
+# @see http://subtech.g.hatena.ne.jp/secondlife/20110222/1298354852
+if is-at-least 4.3.10; then
+  bindkey '^R' history-incremental-pattern-search-backward
+  bindkey '^S' history-incremental-pattern-search-forward
+fi
 
-PATH=$PATH:/opt/local/bin:/usr/local/bin:/var/lib/gems/1.8/bin
-PATH=./bin:$PATH
-export PATH
-
-alias ll='ls -alpv --color'
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="trash-put"
-alias less="/usr/share/vim/vim72/macros/less.sh"
-
-alias vi="vi -p"
-alias :q='exit'
-
-alias -g V='| vim -R -'
-
-alias r="rails"
-# export JAVA_HOME=/usr/lib/jvm/java-6-sun
-# export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
-
-bindkey '[3~' delete-char
-bindkey '[1~' beginning-of-line
-bindkey '[4~' end-of-line
-bindkey '' backward-delete-char
-
-# screen のタイトル
-preexec () {
-  [ ${STY} ] && echo -ne "\ek${1%% *}\e\\"
+# cd したら ls
+function chpwd() {
+  ls -v -F -l --color=auto
+}
+# bandle + cd
+function cdb() {
+  cd `ruby -e "require 'rubygems';gem 'bundler';require 'bundler';Bundler.load.specs.each{|s| puts s.full_gem_path if s.name == '${1}'}"`
 }
 
 # ssh-agentの設定
@@ -165,16 +115,19 @@ else
   echo "no ssh-agent"
 fi
 
-# bandle + cd
-function cdb() {
-  cd `ruby -e "require 'rubygems';gem 'bundler';require 'bundler';Bundler.load.specs.each{|s| puts s.full_gem_path if s.name == '${1}'}"`
-}
+export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
+export PATH=./bin:$PATH
+
+alias ll='ls -alpv --color'
+alias cp="cp -i"
+alias mv="mv -i"
+alias vi="vi -p"
+alias :q='exit'
+alias -g V='| vim -R -'
+alias r="rails"
+
+prompt fire
 
 # RVM
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
-# 実行時間を報告する
-REPORTTIME=3
-# C-w で削除する時に / を区切り文字とする
-WORDCHARS=${WORDCHARS:s,/,,}
 
