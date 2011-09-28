@@ -124,6 +124,7 @@ alias vi="vi -p"
 alias :q='exit'
 alias -g V='| vim -R -'
 alias r="rails"
+function v() {vi ${${=*/:/ +}/:*}}
 
 prompt fire
 
