@@ -115,6 +115,7 @@ fi
 
 export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
 export PATH=./bin:$PATH
+export export CDPATH=$HOME
 
 alias ll='ls -alpv --color'
 alias cp="cp -i"
