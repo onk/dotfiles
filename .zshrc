@@ -115,6 +115,7 @@ fi
 
 export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
 export PATH=./bin:$PATH
+export export CDPATH=$HOME
 
 alias ll='ls -alpv --color'
 alias cp="cp -i"
@@ -123,6 +124,7 @@ alias vi="vi -p"
 alias :q='exit'
 alias -g V='| vim -R -'
 alias r="rails"
+function v() {vi ${${=*/:/ +}/:*}}
 
 prompt fire
 
