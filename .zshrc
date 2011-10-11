@@ -113,7 +113,7 @@ else
   echo "no ssh-agent"
 fi
 
-export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
+export GREP_OPTIONS='--line-number --color=auto --exclude-dir=".svn"'
 export PATH=./bin:$PATH
 export export CDPATH=$HOME
 
