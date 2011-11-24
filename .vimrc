@@ -110,6 +110,14 @@ nnoremap gj j
 nnoremap gk k
 vnoremap gj j
 vnoremap gk k
+nnoremap 0 g0
+nnoremap g0 0
+nnoremap $ g$
+nnoremap g$ $
+vnoremap 0 g0
+vnoremap g0 0
+vnoremap $ g$
+vnoremap g$ $
 
 " スクロール
 nnoremap J <C-e>j
