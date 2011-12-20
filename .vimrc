@@ -30,7 +30,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'yuroyoro/monday'
 
 Bundle 'Align'
-Bundle 'bufexplorer.zip'
+" Bundle 'bufexplorer.zip'
 Bundle 'nginx.vim'
 Bundle 'svn-diff.vim'
 Bundle 'yanktmp.vim'
@@ -119,6 +119,12 @@ vnoremap g0 0
 vnoremap $ g$
 vnoremap g$ $
 
+" http://vim-users.jp/2011/04/hack214/
+onoremap ) t)
+onoremap ( t(
+vnoremap ) t)
+vnoremap ( t(
+
 " スクロール
 nnoremap J <C-e>j
 nnoremap K <C-y>k
@@ -142,10 +148,6 @@ nnoremap w+ 4<C-w>+
 nnoremap w- 4<C-w>-
 nnoremap w, 4<C-w><
 nnoremap w. 4<C-w>>
-
-" tab 操作
-nnoremap tn :<C-u>tabnext<CR>
-nnoremap tp :<C-u>tabprev<CR>
 
 " 検索後、真ん中にフォーカスをあわせる
 " 検索時，folding を考慮
@@ -247,7 +249,7 @@ let g:surround_{char2nr('B')} = "\1method\1 {\2args\r..*\r|&|\2 \r }"
 " Align
 
 " bufexplorer.zip
-nnoremap <silent> <C-l> :<C-u>BufExplorer<CR>
+" nnoremap <silent> <C-l> :<C-u>BufExplorer<CR>
 
 " yanktmp.vim
 noremap <silent> sy :call YanktmpYank()<CR>
