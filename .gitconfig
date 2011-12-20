@@ -17,6 +17,7 @@
 [core]
   excludesfile = ~/.gitignore
   pager = lv -c
+  quotepath = false
 
 [format]
   pretty = %h -%d %s (%cr)
