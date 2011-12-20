@@ -12,6 +12,7 @@
   lg = log --graph --all --color --date=relative
   l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
   dc = diff --cached
+  ci = commit -v
 
 [core]
   excludesfile = ~/.gitignore
