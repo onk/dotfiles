@@ -30,8 +30,8 @@ function history-all { history -E 1 }
 
 # 実行時間を報告する
 REPORTTIME=3
-# C-w で削除する時に / を区切り文字とするように *?_-.[]~=&;!#$%^(){}<>
-WORDCHARS=${WORDCHARS:s,/,,}
+# C-w で削除する時に /_ を区切り文字とするように
+WORDCHARS='*?-.[]~=&;!#$%^(){}<>'
 
 # 他の画面とコマンド履歴を共有
 setopt share_history
