@@ -28,6 +28,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'yuroyoro/monday'
+Bundle 'kien/ctrlp.vim'
 Bundle 'LeafCage/foldCC'
 
 Bundle 'Align'
@@ -246,6 +247,13 @@ let g:surround_{char2nr('B')} = "\1method\1 {\2args\r..*\r|&|\2 \r }"
 
 " vim-ruby/vim-ruby
 "setlocal omnifunc=syntaxcomplete#Complete
+
+" kien/ctrlp.vim
+set wildignore+=*/.git/*,*/.svn/*,*.swf,*.gif,*.mask,*.jpg,vendor
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
+  \ 'AcceptSelection("t")': ['<cr>', '<MiddleMouse>'],
+\ }
 
 " Align
 
