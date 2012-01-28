@@ -28,6 +28,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'yuroyoro/monday'
+Bundle 'LeafCage/foldCC'
 
 Bundle 'Align'
 " Bundle 'bufexplorer.zip'
@@ -256,6 +257,12 @@ noremap <silent> sy :call YanktmpYank()<CR>
 noremap <silent> sp :call YanktmpPaste_p()<CR>
 noremap <silent> sP :call YanktmpPaste_P()<CR>
 
+" LeafCage/foldCC
+" @see http://d.hatena.ne.jp/leafcage/20111223/1324705686
+set foldtext=FoldCCtext()
+set foldcolumn=5
+set fillchars=vert:\|
+noremap <silent> <C-g> :echo FoldCCnavi()<CR>
 
 " ======================================================================
 " color
