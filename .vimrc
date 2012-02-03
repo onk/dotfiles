@@ -249,7 +249,7 @@ let g:surround_{char2nr('B')} = "\1method\1 {\2args\r..*\r|&|\2 \r }"
 "setlocal omnifunc=syntaxcomplete#Complete
 
 " kien/ctrlp.vim
-set wildignore+=*/.git/*,*/.svn/*,*.swf,*.gif,*.mask,*.jpg,vendor
+set wildignore+=*/.git/*,*/.svn/*,*.swf,*.gif,*.mask,*.jpg,vendor,.rsync_cache
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
   \ 'AcceptSelection("t")': ['<cr>', '<MiddleMouse>'],
