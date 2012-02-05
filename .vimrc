@@ -30,6 +30,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'yuroyoro/monday'
 Bundle 'kien/ctrlp.vim'
 Bundle 'LeafCage/foldCC'
+Bundle 'tyru/DumbBuf.vim'
 
 Bundle 'Align'
 " Bundle 'bufexplorer.zip'
@@ -271,6 +272,11 @@ set foldtext=FoldCCtext()
 set foldcolumn=5
 set fillchars=vert:\|
 noremap <silent> <C-g> :echo FoldCCnavi()<CR>
+
+" tyru/DumbBuf.vim
+" @see http://vim.g.hatena.ne.jp/tyru/20091030
+let g:dumbbuf_hotkey = '<C-l>'
+
 
 " ======================================================================
 " color
