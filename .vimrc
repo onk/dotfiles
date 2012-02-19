@@ -136,6 +136,10 @@ nnoremap <C-y> <C-y>k
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
+" [tab] でインデント
+vnoremap <tab> >gv
+vnoremap <S-tab> <gv
+
 " window 操作
 nnoremap wh <C-w>h
 nnoremap wj <C-w>j
