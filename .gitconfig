@@ -6,7 +6,7 @@
   ui = auto
 
 [alias]
-  st = status -s
+  st = status -sb
   br = branch
   co = checkout
   lg = log --graph --all --color --date=relative
