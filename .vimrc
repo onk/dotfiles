@@ -91,7 +91,8 @@ set statusline=\ [%02n]                                          "number of buff
 set statusline+=\ %F                                             "file name
 set statusline+=\ %m\ %r\ %h\ %w                                 "読み込み専用ファイルはRO,変更されたら+とか
 set statusline+=[%{&fileencoding}\ %{&fileformat}\ %{&filetype}]
-set statusline+=%=\ (%l/%L,%v)                                   "行/行数、列
+set statusline+=%=\ %{fugitive#statusline()}                     "git  branch 表示
+set statusline+=\ (%l/%L,%v)                                     "行/行数、列
 
 " 文字化け対策
 set fileencodings=utf-8,cp932,euc-jp    " 文字コード
