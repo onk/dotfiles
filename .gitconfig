@@ -8,6 +8,7 @@
 [alias]
   st = status -sb
   br = branch
+  ad = add
   co = checkout
   lg = log --graph --all --color --date=relative
   l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
