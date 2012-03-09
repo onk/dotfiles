@@ -172,6 +172,10 @@ nnoremap g# g#zvzz
 " inoremap () ()<LEFT>
 " inoremap <> <><LEFT>
 
+" tab 操作
+nnoremap <Right> :tabnext<CR>
+nnoremap <Left> :tabprev<CR>
+
 " 行頭で h を押すと折畳を閉じる。
 nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
 " 折畳上で l を押すと折畳を開く。
