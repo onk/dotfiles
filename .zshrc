@@ -44,7 +44,7 @@ setopt complete_in_word # 補完開始時にカーソルは単語の終端にな
 setopt list_types       # 種類を示すマーク表示をつける(ls -fと同じもの)
 setopt auto_param_keys  # カッコの対応などを自動的に補完
 setopt auto_param_slash # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-setopt complete_aliases # 補完候補にエイリアスを含める
+setopt no_complete_aliases # 補完の解釈前にエイリアスを展開する
 
 # コマンドにsudoを付けてもきちんと補完出来るようにする
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
