@@ -124,6 +124,7 @@ alias vi="vi -p"
 alias :q='exit'
 alias -g V='| vim -R -'
 alias -g T='| tail'
+alias -g H='| head'
 alias r="rails"
 alias g="git"
 function v() {vi ${${=*/:/ +}/:*}}
