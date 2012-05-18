@@ -100,19 +100,6 @@ function cdb() {
   cd `ruby -e "require 'rubygems';gem 'bundler';require 'bundler';Bundler.load.specs.each{|s| puts s.full_gem_path if s.name == '${1}'}"`
 }
 
-# ssh-agentの設定
-agent="$HOME/.ssh/ssh-agent"
-if [ -S "$SSH_AUTH_SOCK" ]; then
-  case $SSH_AUTH_SOCK in
-    /tmp/*/agent.[0-9]*)
-    ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent
-  esac
-elif [ -S $agent ]; then
-  export SSH_AUTH_SOCK=$agent
-else
-  echo "no ssh-agent"
-fi
-
 export GREP_OPTIONS='--line-number --color=auto --exclude-dir=".svn"'
 export PATH=./bin:$PATH
 export CDPATH=$HOME
