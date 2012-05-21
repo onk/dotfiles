@@ -98,7 +98,8 @@ function cdb() {
 }
 
 export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
-export PATH=./bin:$PATH
+export PATH=./bin:/usr/local/mysql/bin:$PATH
+
 export CDPATH=$HOME
 
 alias ll='ls -alpv --color'
