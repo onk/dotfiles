@@ -9,6 +9,9 @@ compinit
 promptinit
 colors
 
+# 色設定
+eval `dircolors ~/.colorrc`
+
 # ディレクトリ名だけで cd
 setopt auto_cd
 # プロンプト中の変数を展開する
