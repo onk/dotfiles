@@ -199,6 +199,7 @@ autocmd BufWritePre * call RTrim()
 " 改行時の自動コメントを抑制
 autocmd FileType * setlocal formatoptions-=r " 挿入モードで改行した時に # を自動挿入しない
 autocmd FileType * setlocal formatoptions-=o " ノーマルモードで o や O をした時に # を自動挿入しない
+autocmd FileType * setlocal formatoptions+=j " jJ で join したときに行頭コメントを除去する
 
 "rubyマジックコメント
 iab u8 # -*- coding: utf-8 -*-
