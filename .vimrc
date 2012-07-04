@@ -318,3 +318,14 @@ if exists('&colorcolumn')
   autocmd FileType sh,cpp,perl,vim,ruby,python,haskell,scheme setlocal textwidth=80
 endif
 
+augroup Binary
+  au!
+  au BufReadPre  *.swf let &bin=1
+  au BufReadPost *.swf if &bin | %!xxd
+  au BufReadPost *.swf set ft=xxd | endif
+  au BufWritePre *.swf if &bin | %!xxd -r
+  au BufWritePre *.swf endif
+  au BufWritePost *.swf if &bin | %!xxd
+  au BufWritePost *.swf set nomod | endif
+augroup END
+
