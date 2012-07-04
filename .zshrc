@@ -23,8 +23,8 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 # コマンド履歴
 HISTFILE=$HOME/.zsh-history
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt extended_history
 function history-all { history -E 1 }
 
