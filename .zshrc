@@ -91,6 +91,10 @@ if is-at-least 4.3.10; then
   bindkey '^S' history-incremental-pattern-search-forward
 fi
 
+# ^b, ^f は1文字ではなく1単語ずつ移動
+bindkey '^b' backward-word
+bindkey '^f' forward-word
+
 # cd したら ls
 function chpwd() {
   ls -v -F -l --color=auto
