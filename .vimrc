@@ -329,3 +329,12 @@ augroup Binary
   au BufWritePost *.swf set nomod | endif
 augroup END
 
+" shebang がある場合は保存時に実行権限付与
+autocmd BufWritePost * :call AddExecmod()
+function AddExecmod()
+  let line = getline(1)
+  if strpart(line, 0, 2) == "#!"
+    call system("chmod +x ". expand("%"))
+  endif
+endfunction
+
