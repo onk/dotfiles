@@ -119,6 +119,10 @@ alias -g T='| tail'
 alias -g H='| head'
 alias r="rails"
 alias g="git"
+alias sup="svn up --ignore-externals"
+alias sst="svn st --ignore-externals"
+alias sdie="svn diff --depth empty"
+alias sres="svn resolve --accept working"
 function v() {vi ${${=*/:/ +}/:*}}
 function ssh() {
   toilet -f pagga $1
