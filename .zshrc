@@ -124,10 +124,6 @@ alias sst="svn st --ignore-externals"
 alias sdie="svn diff --depth empty"
 alias sres="svn resolve --accept working"
 function v() {vi ${${=*/:/ +}/:*}}
-function ssh() {
-  toilet -f pagga $1
-  =ssh $*
-}
 
 prompt fire
 
