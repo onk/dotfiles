@@ -8,12 +8,19 @@
 [alias]
   st = status -sb
   br = branch
+  br-a = branch -a
   ad = add
+  ad-p = add -p
   co = checkout
   lg = log --graph --all --color --date=relative
   l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
+  d  = diff -b
   dc = diff --cached -b
   ci = commit -v
+  ci-am = commit -v --amend
+  m  = merge
+  r-c = rebase --continue
+  r-i  = rebase -i
 
 [core]
   excludesfile = ~/.gitignore
