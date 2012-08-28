@@ -33,6 +33,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/operator-camelize.vim'
 NeoBundle 'yuroyoro/monday'
+NeoBundle 'hallison/vim-markdown'
 
 NeoBundle 'sequence'
 NeoBundle 'svn-diff.vim'
@@ -203,6 +204,13 @@ augroup END
 let g:quickrun_config = {}
 let g:quickrun_config._ = { 'runner' : 'vimproc' }
 let g:quickrun_config['ruby.rspec'] = { 'command' : 'rspec', 'split'   : '' }
+let g:quickrun_config['markdown'] = { 'command' : 'pandoc',
+      \ 'exec': ['%c -s -f markdown -t html -o %s:p:r.html %s', 'w3m %s:p:r.html', 'sleep 1', 'rm %s:p:r.html'],
+      \ 'tempfile': '{tempname()}.md' }
+
+" tyru/operator-camelize.vim
+vnoremap <Leader>c <Plug>(operator-camelize)
+vnoremap <Leader>C <Plug>(operator-decamelize)
 
 " vim-taglist-plus
 nnoremap <silent> <C-o> :<C-u>Tlist<CR>
