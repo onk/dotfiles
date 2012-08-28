@@ -36,7 +36,7 @@ NeoBundle 'yuroyoro/monday'
 
 NeoBundle 'sequence'
 NeoBundle 'svn-diff.vim'
-NeoBundle 'taglist.vim'
+NeoBundle 'klen/vim-taglist-plus'
 NeoBundle 'yanktmp.vim'
 
 " =====================================================================
@@ -204,7 +204,7 @@ let g:quickrun_config = {}
 let g:quickrun_config._ = { 'runner' : 'vimproc' }
 let g:quickrun_config['ruby.rspec'] = { 'command' : 'rspec', 'split'   : '' }
 
-" taglist.vim
+" vim-taglist-plus
 nnoremap <silent> <C-o> :<C-u>Tlist<CR>
 
 " yanktmp.vim
