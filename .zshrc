@@ -105,7 +105,7 @@ function cdb() {
 }
 
 export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
-export PATH=./bin:/usr/local/mysql/bin:$PATH
+export PATH=./bin:$PATH
 
 export CDPATH=$HOME
 
