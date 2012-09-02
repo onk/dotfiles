@@ -40,6 +40,9 @@ NeoBundle 'svn-diff.vim'
 NeoBundle 'klen/vim-taglist-plus'
 NeoBundle 'yanktmp.vim'
 
+" colors
+NeoBundle 'tpope/vim-vividchalk'
+
 " =====================================================================
 " basic options
 " ----------------------------------------------------------------------
@@ -225,7 +228,7 @@ noremap <silent> sP :call YanktmpPaste_P()<CR>
 " ----------------------------------------------------------------------
 " 色指定
 set t_Co=256
-colorscheme pablo
+colorscheme vividchalk
 
 " カーソル行を強調
 set cursorline
@@ -236,8 +239,10 @@ highlight JpSpace cterm=underline ctermfg=Blue
 autocmd BufRead,BufNew * match JpSpace /　/
 
 " 挿入モード時、ステータスラインの色を変える
-autocmd InsertEnter * highlight StatusLine ctermbg=DarkRed
-autocmd InsertLeave * highlight StatusLine ctermbg=Blue
+autocmd InsertEnter * highlight StatusLine ctermbg=Red  ctermfg=White
+autocmd InsertLeave * highlight StatusLine ctermbg=Grey ctermfg=Black
+
+hi Search term=reverse ctermfg=black ctermbg=brown
 
 " 指定の横幅以上はハイライトする (vim 7.3 以上)
 " @see http://vim-users.jp/2010/09/hack172/
