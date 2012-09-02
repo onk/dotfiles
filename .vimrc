@@ -103,6 +103,7 @@ set foldlevel=99
 set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos,mac
 set helplang=ja,en
+set ambiwidth=double
 
 " 表示行単位の移動
 nnoremap j gj
