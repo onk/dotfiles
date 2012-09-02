@@ -209,8 +209,8 @@ let g:quickrun_config['markdown'] = { 'command' : 'pandoc',
       \ 'tempfile': '{tempname()}.md' }
 
 " tyru/operator-camelize.vim
-vnoremap <Leader>c <Plug>(operator-camelize)
-vnoremap <Leader>C <Plug>(operator-decamelize)
+vmap <Leader>c <Plug>(operator-camelize)
+vmap <Leader>C <Plug>(operator-decamelize)
 
 " vim-taglist-plus
 nnoremap <silent> <C-o> :<C-u>Tlist<CR>
