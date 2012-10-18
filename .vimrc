@@ -34,6 +34,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/operator-camelize.vim'
 NeoBundle 'yuroyoro/monday'
 NeoBundle 'hallison/vim-markdown'
+NeoBundle 'sjl/gundo.vim'
 
 NeoBundle 'sequence'
 NeoBundle 'svn-diff.vim'
