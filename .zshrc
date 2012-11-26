@@ -122,6 +122,7 @@ alias -g RT='RAILS_ENV=test'
 alias -g RP='RAILS_ENV=production'
 alias r="rails"
 alias g="git"
+alias s="git status -sb"
 alias sup="svn up --ignore-externals"
 alias sst="svn st --ignore-externals"
 alias sdie="svn diff --depth empty"
