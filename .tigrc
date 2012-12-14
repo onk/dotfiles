@@ -10,5 +10,5 @@ set show-date = local
 bind generic g move-first-line
 bind generic G move-last-line
 
-bind generic R !git revert %(commit)
+bind main R !git revert %(commit)
 
