@@ -19,6 +19,7 @@
   ci = commit -v
   ci-am = commit -v --amend
   m  = merge
+  mo  = merge origin/master --ff
   r-c = rebase --continue
   r-i  = rebase -i
 
@@ -31,4 +32,11 @@
   pretty = %h -%d %s (%cr)
 
 [interactive]
-	singlekey = true
+  singlekey = true
+
+[push]
+  default = upstream
+
+[merge]
+  ff = false
+
