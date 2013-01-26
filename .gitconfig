@@ -17,6 +17,7 @@
   l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
   d  = diff -b
   dc = diff --cached -b
+  dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   ci = commit -v
   ci-am = commit -v --amend
   m  = merge
