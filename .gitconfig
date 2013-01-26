@@ -20,6 +20,7 @@
   dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   ci = commit -v
   ci-am = commit -v --amend
+  f  = fetch
   m  = merge
   mo  = merge origin/master --ff
   r-c = rebase --continue
