@@ -6,26 +6,26 @@
   ui = auto
 
 [alias]
-  s = status -sb -uno
-  b = branch
-  ba = branch -a
   a = add
   ap = add -p
   aw = !"git diff -w --no-color | git apply --cached"
+  b = branch
+  ba = branch -a
+  ci = commit -v
+  ci-am = commit -v --amend
   co = checkout
-  lg = log --graph --all --color --date=relative
-  l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
   d  = diff -b
   dc = diff --cached -b
   dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
-  ci = commit -v
-  ci-am = commit -v --amend
   f  = fetch
+  l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
+  lg = log --graph --all --color --date=relative
   m  = merge
   mo  = merge origin/master --ff
   r = rebase
-  ri  = rebase -i
   rc = rebase --continue
+  ri  = rebase -i
+  s = status -sb -uno
 
 [core]
   excludesfile = ~/.gitignore
