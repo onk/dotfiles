@@ -11,6 +11,7 @@
   br-a = branch -a
   ad = add
   ad-p = add -p
+  ad-w = !"git diff -w --no-color | git apply --cached"
   co = checkout
   lg = log --graph --all --color --date=relative
   l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
