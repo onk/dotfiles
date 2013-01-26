@@ -6,12 +6,12 @@
   ui = auto
 
 [alias]
-  st = status -sb
-  br = branch
-  br-a = branch -a
-  ad = add
-  ad-p = add -p
-  ad-w = !"git diff -w --no-color | git apply --cached"
+  s = status -sb -uno
+  b = branch
+  ba = branch -a
+  a = add
+  ap = add -p
+  aw = !"git diff -w --no-color | git apply --cached"
   co = checkout
   lg = log --graph --all --color --date=relative
   l  = log --pretty=format:\"%h (%an): %s\" --date=short -20
@@ -23,8 +23,9 @@
   f  = fetch
   m  = merge
   mo  = merge origin/master --ff
-  r-c = rebase --continue
-  r-i  = rebase -i
+  r = rebase
+  ri  = rebase -i
+  rc = rebase --continue
 
 [core]
   excludesfile = ~/.gitignore
