@@ -12,7 +12,7 @@
   b = branch
   ba = branch -a
   ci = commit -v
-  ci-am = commit -v --amend
+  cam = commit -v --amend
   co = checkout
   d  = diff -b
   dc = diff --cached -b
