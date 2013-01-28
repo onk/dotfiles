@@ -18,7 +18,7 @@
   dc = diff --cached -b
   dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   f  = fetch
-  l  = log --pretty=format:\"%h %C(cyan)(%an)%Creset: %s\" --date=short -20
+  l  = log --pretty=format:\"%C(yellow)%h%Creset %C(cyan)(%an)%Creset: %s\" --date=short -20
   lg = log --graph --all --color --date=relative
   m  = merge
   mo  = merge origin/master --ff
