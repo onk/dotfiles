@@ -33,6 +33,7 @@
   excludesfile = ~/.gitignore
   pager = lv -c
   quotepath = false
+  autocrlf = input
 
 [format]
   pretty = %h -%d %s (%cr)
