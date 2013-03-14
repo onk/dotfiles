@@ -20,12 +20,13 @@
   dc = diff --cached -b
   dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   f  = fetch
+  fp = fetch -p
   fix = commit -v --amend
   l  = log --pretty=format:\"%C(yellow)%h%Creset %C(cyan)(%an)%Creset: %s\" --date=short -30
   lg = log --graph --all --color --date=relative
   m  = merge
   mo  = merge origin/master --ff
-  pr = remote prune origin
+  pr = pull --prune
   r = rebase
   rc = rebase --continue
   ri  = rebase -i
