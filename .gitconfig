@@ -15,12 +15,12 @@
   bn = branch -a --no-merged
   bs = for-each-ref --sort=-committerdate --format='%(committerdate:iso8601) %(refname:short)' refs/heads/
   ci = commit -v
-  cam = commit -v --amend
   co = checkout
   d  = diff -b
   dc = diff --cached -b
   dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
   f  = fetch
+  fix = commit -v --amend
   l  = log --pretty=format:\"%C(yellow)%h%Creset %C(cyan)(%an)%Creset: %s\" --date=short -30
   lg = log --graph --all --color --date=relative
   m  = merge
