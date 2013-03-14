@@ -11,6 +11,7 @@
   aw = !"git diff -w --no-color | git apply --cached"
   b = branch
   ba = branch -a
+  bd = branch -d
   bm = branch -a --merged
   bn = branch -a --no-merged
   bs = for-each-ref --sort=-committerdate --format='%(committerdate:iso8601) %(refname:short)' refs/heads/
