@@ -99,11 +99,6 @@ bindkey '^f' forward-word
 function chpwd() {
   ls -v -F -l --color=auto
 }
-# bandle + cd
-function cdb() {
-  cd `ruby -e "require 'rubygems';gem 'bundler';require 'bundler';Bundler.load.specs.each{|s| puts s.full_gem_path if s.name == '${1}'}"`
-}
-
 export GREP_OPTIONS='--color=auto --exclude-dir=".svn"'
 export PATH=./bin:$PATH
 
