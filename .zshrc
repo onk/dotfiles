@@ -123,6 +123,15 @@ alias sst="svn st --ignore-externals"
 alias sdie="svn diff --depth empty"
 alias sres="svn resolve --accept working"
 function v() {vi ${${=*/:/ +}/:*}}
+function f() {
+  OLD_HASH=`git show-ref origin/master | cut -d' ' -f1`
+  git fetch -p
+  NEW_HASH=`git show-ref origin/master | cut -d' ' -f1`
+  if [ $OLD_HASH != $NEW_HASH ]; then
+    tig $OLD_HASH..$NEW_HASH
+  fi
+  unset OLD_HASH NEW_HASH
+}
 
 prompt fire
 
