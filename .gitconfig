@@ -32,6 +32,7 @@
   rc = rebase --continue
   ri  = rebase -i
   s = status -sb -uno
+  cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
 
 [core]
   excludesfile = ~/.gitignore
