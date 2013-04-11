@@ -132,6 +132,11 @@ function f() {
   fi
   unset OLD_HASH NEW_HASH
 }
+function cdr() {
+  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    cd $PWD/$(git rev-parse --show-cdup)
+  fi
+}
 
 prompt fire
 
