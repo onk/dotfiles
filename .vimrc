@@ -170,6 +170,10 @@ iab u8 # -*- coding: utf-8 -*-
 " ruby puts マーカー
 iab p= p "= 1 ====================================================================="
 
+" datetime
+inoremap <Leader>date <C-R>=strftime('%Y-%m-%d(%a)')<CR>
+inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
+
 " ハイライトを無効に
 nnoremap <Esc><Esc> :nohlsearch<CR>
 
