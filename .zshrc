@@ -105,8 +105,6 @@ export PATH=./bin:$PATH
 export CDPATH=$HOME
 
 alias ll='ls -alpv --color'
-alias cp="cp -i"
-alias mv="mv -i"
 alias vi="vi -p"
 alias :q='exit'
 alias -g V='| vim -R -'
