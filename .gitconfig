@@ -32,7 +32,8 @@
   rc = rebase --continue
   ri  = rebase -i
   s = status -sb -uno
-  cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
+  cancel = reset HEAD@{1}
+  cancel-all = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
   sweep-branch = !git branch --delete $(git branch --merged master | grep -v '^* master$')
 
 [core]
