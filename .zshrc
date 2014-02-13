@@ -123,6 +123,17 @@ alias sst="svn st --ignore-externals"
 alias sdie="svn diff --depth empty"
 alias sres="svn resolve --accept working"
 function v() {vi ${${=*/:/ +}/:*}}
+alias mm="m master"
+alias md="m develop"
+function m() {
+  VAR=`git merge origin/$* --ff`
+  if [ $VAR = "Already up-to-date." ]; then
+    echo $VAR
+  else
+    tig HEAD@{1}..HEAD
+  fi
+  unset VAR
+}
 function f() {
   OLD_HASH=`git show-ref origin/master | cut -d' ' -f1`
   git fetch -p
