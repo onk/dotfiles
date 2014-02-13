@@ -23,7 +23,7 @@
   f  = fetch
   fp = fetch -p
   fix = commit -v --amend
-  l  = log --pretty=format:\"%C(yellow)%h%Creset %C(green)%cd%Creset %C(cyan)(%an)%Creset: %s\" --date=short -30
+  l  = log --pretty=format:\"%C(yellow)%h%Creset %C(green)%ci%Creset %C(cyan)(%an)%Creset: %s\" --date=short -30
   lg = log --graph --all --color --date=relative
   m  = merge
   mo  = merge origin/master --ff
