@@ -48,12 +48,14 @@
 [interactive]
   singlekey = true
 
-[push]
-  default = upstream
-
 [merge]
   ff = false
 
 [diff]
   algorithm = patience
+
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 
