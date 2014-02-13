@@ -138,8 +138,10 @@ function cdr() {
 
 prompt fire
 
-# RVM
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# chruby
+source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/auto.sh
+chruby 2.2.0-dev
 
 #=============================
 # source auto-fu.zsh
