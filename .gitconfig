@@ -34,7 +34,8 @@
   s = status -sb -uno
   cancel = reset HEAD@{1}
   cancel-all = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
-  sweep-branch = !git branch --delete $(git branch --merged master | grep -v '^* master$')
+  sweep-branch = !git branch --delete $(git branch --merged master | egrep -v '^(\\*| ) master$')
+  sweep-branch-develop = !git branch --delete $(git branch --merged develop | egrep -v '^(\\*| ) develop$')
 
 [core]
   excludesfile = ~/.gitignore
