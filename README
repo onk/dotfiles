@@ -1,0 +1,23 @@
+my dot files
+
+create symbolic link to dotfiles
+--------------------------------
+
+```sh
+$ ./install.sh
+```
+
+install vim
+--------------------------------
+
+```sh
+$ mkdir -p ~/.vim/bundle
+$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+```
+
+open vim
+
+```vim
+:NeoBundleInstall
+```
+
