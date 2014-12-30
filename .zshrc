@@ -169,3 +169,8 @@ zstyle ':completion:*' completer _oldlist _complete
 fi
 
 
+# gopath
+if [ -z "${GOPATH:-}" ]; then
+  export GOPATH=$HOME/go
+  PATH=$PATH:$GOPATH/bin
+fi
