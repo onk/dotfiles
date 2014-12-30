@@ -174,3 +174,38 @@ if [ -z "${GOPATH:-}" ]; then
   export GOPATH=$HOME/go
   PATH=$PATH:$GOPATH/bin
 fi
+
+
+# pecoとghqでローカルのリポジトリクローンに飛ぶ
+function peco-src () {
+  local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^s' peco-src
+
+function peco-gitbranch () {
+  local selected_branch=$(git branch --no-color | sed -e 's/\*/ /g' | peco --query "$LBUFFER" | cut -d" " -f 3)
+  if [ -n "$selected_branch" ]; then
+    BUFFER="git checkout ${selected_branch}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-gitbranch
+bindkey '^b' peco-gitbranch
+
+function peco-mysql-desc () {
+  local database=$(ruby -r yaml -e "print YAML.load_file('config/database.yml')['development']['database']")
+  local selected_table=$(mysql -u root $database -e "SHOW TABLES;" | peco --query "$LBUFFER")
+  if [ -n "$selected_table" ]; then
+    mysql -u root $database -e "DESC $selected_table;"
+    mysql -u root $database -e "SHOW INDEX FROM $selected_table;"
+  fi
+}
+alias pm="peco-mysql-desc"
+

@@ -63,3 +63,9 @@
   show = diff-highlight | less
   diff = diff-highlight | less
 
+[ghq]
+  root = /Users/onaka/src
+
+[ghq "ssh://git.drecom.jp"]
+  vcs = git
+
