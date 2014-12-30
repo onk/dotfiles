@@ -28,6 +28,8 @@
   m  = merge
   mo  = merge origin/master --ff
   pr = pull --prune
+  ph = push origin HEAD
+  phf = push origin HEAD --force-with-lease
   r = rebase
   rc = rebase --continue
   ri  = rebase -i
