@@ -1,3 +1,24 @@
 [user]
   name = Takafumi ONAKA
   email = takafumi.onaka@gmail.com
+
+[alias]
+  a = add
+  ap = add -p
+  b = branch
+  ba = branch -a
+  bm = branch -a --merged
+  bn = branch -a --no-merged
+  ci = commit -v
+  co = checkout
+  d = diff -b
+  dc = diff --cached -b
+  f = fetch -p
+  fix = commit -v --amend
+  ph = push origin HEAD
+  phf = push origin HEAD --force-with-lease
+  r = rebase
+  rc = rebase --continue
+  re = reset HEAD~1
+  ri = reebase -i
+  s = status -sb -uno
