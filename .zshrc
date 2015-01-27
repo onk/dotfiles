@@ -1,3 +1,6 @@
+autoload -Uz promptinit
+promptinit
+
 # history
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=1000000
@@ -6,6 +9,9 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 setopt NO_BANG_HIST
 function history-all { history -E 1 }
+
+# prompt
+prompt bigfade red
 
 # C-S, C-Q によるフロー制御を使わない
 setopt NO_FLOW_CONTROL
