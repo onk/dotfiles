@@ -5,6 +5,10 @@ alias g="git"
 alias s="git status -sb -uno"
 function v() {vi ${${=*/:/ +}/:*}}
 
+# chruby
+source /usr/local/share/chruby/chruby.sh
+chruby 2.3.0-dev
+
 # gopath
 if [ -z "${GOPATH:-}" ]; then
   export GOPATH=$HOME/go
