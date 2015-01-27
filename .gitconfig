@@ -25,3 +25,6 @@
 
 [interactive]
   singlekey = true
+
+[ghq]
+  root = ~/src
