@@ -1,3 +1,12 @@
+# history
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt NO_BANG_HIST
+function history-all { history -E 1 }
+
 # C-S, C-Q によるフロー制御を使わない
 setopt NO_FLOW_CONTROL
 
@@ -26,3 +35,20 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^s' peco-src
+
+function peco-select-history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(\history -n 1 | \
+    eval $tac | \
+    awk '!a[$0]++' | \
+    peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
