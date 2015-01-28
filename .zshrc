@@ -44,6 +44,11 @@ setopt NO_FLOW_CONTROL
 
 alias g="git"
 alias s="git status -sb -uno"
+alias r="bundle exec rails"
+alias sb="SOCKS_PROXY=localhost:1080 bundle-socks"
+alias sr="SOCKS_PROXY=localhost:1080 bundle-socks exec rails"
+alias bi="bundle install --path ~/.bundle --binstubs=~/.bundle/bin --without= --jobs=4"
+alias sbi="SOCKS_PROXY=localhost:1080 bundle-socks install --path ~/.bundle --binstubs=~/.bundle/bin --without= --jobs=4"
 function v() {vi ${${=*/:/ +}/:*}}
 
 # chruby
