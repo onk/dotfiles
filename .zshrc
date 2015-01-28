@@ -11,6 +11,8 @@ setopt SHARE_HISTORY
 setopt NO_BANG_HIST
 function history-all { history -E 1 }
 
+export CDPATH=$HOME
+
 # prompt
 prompt bigfade red
 
