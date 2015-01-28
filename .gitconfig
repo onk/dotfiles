@@ -20,7 +20,7 @@
   r = rebase
   rc = rebase --continue
   re = reset HEAD~1
-  ri = reebase -i
+  ri = rebase -i
   s = status -sb
 
 [interactive]
