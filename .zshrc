@@ -23,6 +23,9 @@ fi
 # C-S, C-Q によるフロー制御を使わない
 setopt NO_FLOW_CONTROL
 
+alias -g RD='RAILS_ENV=development'
+alias -g RT='RAILS_ENV=test'
+alias -g RP='RAILS_ENV=production'
 alias g="git"
 alias s="git status -sb"
 alias r="bundle exec rails"
