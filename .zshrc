@@ -33,6 +33,9 @@ alias sb="SOCKS_PROXY=localhost:1080 bundle-socks"
 alias sr="SOCKS_PROXY=localhost:1080 bundle-socks exec rails"
 alias bi="bundle install --path ~/.bundle --binstubs=~/.bundle/bin --without= --jobs=4"
 alias sbi="SOCKS_PROXY=localhost:1080 bundle-socks install --path ~/.bundle --binstubs=~/.bundle/bin --without= --jobs=4"
+alias cod="git checkout develop"
+alias com="git checkout master"
+alias cow="git checkout working"
 function v() {vi ${${=*/:/ +}/:*}}
 
 # chruby
