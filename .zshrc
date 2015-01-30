@@ -1,5 +1,7 @@
+autoload -Uz compinit
 autoload -Uz promptinit
 autoload -Uz vcs_info
+compinit
 promptinit
 
 # history
