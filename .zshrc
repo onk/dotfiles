@@ -29,6 +29,7 @@ alias -g RP='RAILS_ENV=production'
 alias g="git"
 alias s="git status -sb"
 alias r="bundle exec rails"
+alias :q="exit"
 alias sb="SOCKS_PROXY=localhost:1080 bundle-socks"
 alias sr="SOCKS_PROXY=localhost:1080 bundle-socks exec rails"
 alias bi="bundle install --path ~/.bundle --binstubs=~/.bundle/bin --without= --jobs=4"
