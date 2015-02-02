@@ -13,6 +13,7 @@ syntax on
 " plugins
 " ----------------------------------------------------------------------
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'tpope/vim-fugitive'
 
 " =====================================================================
 " basic options
