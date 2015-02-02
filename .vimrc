@@ -8,3 +8,8 @@ call neobundle#end()
 
 filetype plugin indent on
 syntax on
+
+" ======================================================================
+" plugins
+" ----------------------------------------------------------------------
+NeoBundle 'h1mesuke/vim-alignta'
