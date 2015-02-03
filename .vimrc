@@ -24,3 +24,9 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
+set hlsearch
+set ignorecase
+set smartcase
+set wrapscan
+set incsearch
+set scrolloff=5
