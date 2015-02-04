@@ -31,4 +31,9 @@ function peco-git-branch() {
   git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"
 }
 
+function peco-git-changed-files() {
+  git status -s | peco --prompt "multi: C-Space>" | awk '{print $2}'
+}
+
 alias -g B='$(peco-git-branch)'
+alias -g F='$(peco-git-changed-files)'
