@@ -26,3 +26,9 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+function peco-git-branch() {
+  git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"
+}
+
+alias -g B='$(peco-git-branch)'
