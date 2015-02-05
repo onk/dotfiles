@@ -6,15 +6,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 call neobundle#end()
 
-filetype plugin indent on
-syntax on
-
 " ======================================================================
 " plugins
 " ----------------------------------------------------------------------
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'tpope/vim-fugitive'
+
+filetype plugin indent on
+syntax on
 
 " =====================================================================
 " basic options
