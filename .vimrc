@@ -11,6 +11,8 @@ call neobundle#end()
 " ----------------------------------------------------------------------
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
