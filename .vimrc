@@ -12,6 +12,7 @@ syntax on
 " ======================================================================
 " plugins
 " ----------------------------------------------------------------------
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'tpope/vim-fugitive'
 
