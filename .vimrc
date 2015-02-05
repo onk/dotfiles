@@ -15,6 +15,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tpope/vim-fugitive'
 
+" colors
+NeoBundle 'tpope/vim-vividchalk'
+
 filetype plugin indent on
 syntax on
 
@@ -34,3 +37,10 @@ set smartcase
 set wrapscan
 set incsearch
 set scrolloff=5
+
+" ======================================================================
+" color
+" ----------------------------------------------------------------------
+set t_Co=256
+colorscheme vividchalk
+set background=dark
