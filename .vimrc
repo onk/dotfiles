@@ -10,11 +10,13 @@ call neobundle#end()
 " plugins
 " ----------------------------------------------------------------------
 NeoBundle 'LeafCage/foldCC'
+NeoBundle 'Shougo/vimproc'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
 
 " colors
@@ -37,6 +39,22 @@ let g:indent_guides_guide_size = 2
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=233
 let g:indent_guides_enable_on_vim_startup = 1
+
+" thinca/vim-quickrun
+augroup QuickrunRSpec
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  " @see http://qiita.com/joker1007/items/69035c454de416849b8a
+  nnoremap <expr><silent> <Leader>lr "<Esc>:QuickRun -cmdopt \"-l " . line(".") . "\"<CR>"
+augroup END
+let g:quickrun_config = {}
+let g:quickrun_config._ = { 'runner' : 'vimproc' }
+let g:quickrun_config['ruby.rspec'] = {
+    \ 'command' : 'rspec',
+    \ 'exec' : 'bundle exec %c %o %s %a',
+    \ 'split' : '',
+    \ 'runner/vimproc/updatetime' : 10,
+    \ }
 
 " =====================================================================
 " basic options
