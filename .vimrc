@@ -9,6 +9,7 @@ call neobundle#end()
 " ======================================================================
 " plugins
 " ----------------------------------------------------------------------
+NeoBundle 'LeafCage/foldCC'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -21,6 +22,13 @@ NeoBundle 'tpope/vim-vividchalk'
 
 filetype plugin indent on
 syntax on
+
+" LeafCage/foldCC
+" @see http://d.hatena.ne.jp/leafcage/20111223/1324705686
+set foldtext=FoldCCtext()
+set fillchars=vert:\|
+let g:foldCCtext_tail = 'printf("   %s[%4d lines  Lv%-2d]%s",
+    \ v:folddashes, v:foldend-v:foldstart+1, v:foldlevel, v:folddashes)'
 
 " nathanaelkane/vim-indent-guides
 let indent_guides_auto_colors = 0
@@ -46,6 +54,14 @@ set smartcase
 set wrapscan
 set incsearch
 set scrolloff=5
+set foldmethod=syntax
+set foldlevel=99
+
+" folding
+nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
+nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
+vnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zcgv' : 'h'
+vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
 
 " ======================================================================
 " color
