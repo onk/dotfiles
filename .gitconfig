@@ -25,6 +25,9 @@
   ri = rebase -i
   s = status -sb
 
+[core]
+  excludesfile = ~/.gitignore_global
+
 [interactive]
   singlekey = true
 

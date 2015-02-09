@@ -1,0 +1,6 @@
+Thumbs.db
+.DS_Store
+/log/**/*.log
+/tmp/**/*
+/.bundle
+/vendor/assets/bower_components
