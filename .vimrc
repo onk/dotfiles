@@ -75,6 +75,7 @@ set scrolloff=5
 set foldmethod=syntax
 set foldlevel=99
 set number
+set ambiwidth=double
 
 " folding
 nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
