@@ -16,6 +16,7 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nishigori/increment-activator'
+NeoBundle 'rhysd/committia.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
@@ -43,9 +44,14 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " nishigori/increment-activator
 let g:increment_activator_filetype_candidates = {
-    \ '_' : [],
+    \ '_' : [
+    \ ],
     \ 'gitrebase': [
     \   ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
+    \ ],
+    \ 'ruby.rspec': [
+    \   ['it', 'xit'],
+    \   ['get', 'post', 'put', 'delete'],
     \ ],
     \ }
 
