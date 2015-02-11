@@ -15,6 +15,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'nishigori/increment-activator'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
@@ -39,6 +40,14 @@ let g:indent_guides_guide_size = 2
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=233
 let g:indent_guides_enable_on_vim_startup = 1
+
+" nishigori/increment-activator
+let g:increment_activator_filetype_candidates = {
+    \ '_' : [],
+    \ 'gitrebase': [
+    \   ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
+    \ ],
+    \ }
 
 " thinca/vim-quickrun
 augroup QuickrunRSpec
