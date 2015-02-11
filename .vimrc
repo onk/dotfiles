@@ -94,6 +94,16 @@ set ambiwidth=double
 set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos,mac
 
+" 表示行単位の移動
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap gj j
+nnoremap gk k
+vnoremap gj j
+vnoremap gk k
+
 " folding
 nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
 nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
