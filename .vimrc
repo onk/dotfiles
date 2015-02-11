@@ -91,6 +91,8 @@ set foldmethod=syntax
 set foldlevel=99
 set number
 set ambiwidth=double
+set fileencodings=utf-8,cp932,euc-jp
+set fileformats=unix,dos,mac
 
 " folding
 nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
