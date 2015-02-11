@@ -110,6 +110,10 @@ nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
 vnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zcgv' : 'h'
 vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
 
+" 検索後、真ん中にフォーカスをあわせる
+nnoremap n  nzvzz
+nnoremap N  Nzvzz
+
 " ======================================================================
 " color
 " ----------------------------------------------------------------------
