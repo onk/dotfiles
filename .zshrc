@@ -20,6 +20,8 @@ setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 
+WORDCHARS='*?-.[]~&;!#$%^(){}<>'
+
 # prompt
 if [ -f ~/.zsh/my_prompt.zsh ]; then
   source ~/.zsh/my_prompt.zsh
