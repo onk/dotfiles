@@ -14,6 +14,9 @@ setopt NO_BANG_HIST
 function history-all { history -E 1 }
 
 export CDPATH=$HOME
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
 
 # prompt
 if [ -f ~/.zsh/my_prompt.zsh ]; then
