@@ -13,6 +13,8 @@ setopt SHARE_HISTORY
 setopt NO_BANG_HIST
 function history-all { history -E 1 }
 
+REPORTTIME=3
+
 export CDPATH=$HOME
 setopt AUTO_CD
 setopt AUTO_PUSHD
