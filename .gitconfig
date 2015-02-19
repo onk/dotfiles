@@ -9,6 +9,7 @@
   ba = branch -a
   bm = branch -a --merged
   bn = branch -a --no-merged
+  ch = cherry-pick
   ci = commit -v
   co = checkout
   d = diff -b
