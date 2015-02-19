@@ -9,6 +9,7 @@ call neobundle#end()
 " ======================================================================
 " plugins
 " ----------------------------------------------------------------------
+NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'LeafCage/foldCC'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'ctrlpvim/ctrlp.vim'
