@@ -91,6 +91,8 @@ set scrolloff=5
 set foldmethod=syntax
 set foldlevel=99
 set number
+set list
+set listchars=tab:>-,trail:-,nbsp:%,extends:\
 set ambiwidth=double
 set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos,mac
