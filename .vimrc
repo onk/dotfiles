@@ -93,6 +93,7 @@ set number
 set ambiwidth=double
 set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos,mac
+set clipboard=unnamed
 
 " 表示行単位の移動
 nnoremap j gj
