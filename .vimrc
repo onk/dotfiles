@@ -97,6 +97,8 @@ set ambiwidth=double
 set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos,mac
 set clipboard=unnamed
+set wildmenu
+set wildmode=list:longest
 
 " 表示行単位の移動
 nnoremap j gj
