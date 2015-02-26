@@ -99,7 +99,7 @@ set fileformats=unix,dos,mac
 set clipboard=unnamed
 set wildmenu
 set wildmode=list:longest
-set backspace=start
+set backspace=start,indent
 
 " 表示行単位の移動
 nnoremap j gj
