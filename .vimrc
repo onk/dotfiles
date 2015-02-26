@@ -127,6 +127,9 @@ vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
 nnoremap n  nzvzz
 nnoremap N  Nzvzz
 
+" テキストの整形方法(改行時の自動コメントアウト等)を調整
+autocmd FileType * setlocal formatoptions=tcqnlmMj
+
 " ======================================================================
 " color
 " ----------------------------------------------------------------------
