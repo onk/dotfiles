@@ -111,6 +111,8 @@ nnoremap gk k
 vnoremap gj j
 vnoremap gk k
 
+nnoremap Y y$
+
 " window 移動
 nnoremap wh <C-w>h
 nnoremap wj <C-w>j
