@@ -134,6 +134,13 @@ nnoremap N  Nzvzz
 " テキストの整形方法(改行時の自動コメントアウト等)を調整
 autocmd FileType * setlocal formatoptions=tcqnlmMj
 
+" Remove trailing spaces
+function! RTrim()
+  let s:cursor = getpos(".")
+  %s/\s\+$//e
+  call setpos(".", s:cursor)
+endfunction
+
 " ======================================================================
 " color
 " ----------------------------------------------------------------------
