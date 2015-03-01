@@ -46,6 +46,29 @@ alias com="git checkout master"
 alias cow="git checkout working"
 function v() {vi ${${=*/:/ +}/:*}}
 
+case "${OSTYPE}" in
+  darwin*)
+    alias ll='ls -lFG'
+    alias lsd='ls -lFG | grep -e "^d" --color=never'
+    ;;
+  linux*)
+    alias ll='ls -lvF --color'
+    alias lsd='ls -lvF --color | grep -e "^d" --color=never'
+    ;;
+esac
+
+# cd したら ls
+function chpwd() {
+  case "${OSTYPE}" in
+    darwin*)
+      ls -lF -G
+      ;;
+    linux*)
+      ls -lvF --color
+      ;;
+  esac
+}
+
 # chruby
 source /usr/local/share/chruby/chruby.sh
 chruby 2.3.0-dev
