@@ -25,6 +25,7 @@
   re = reset HEAD~1
   ri = rebase -i
   s = status -sb
+  sq = push sqale sqale:master
 
 [core]
   excludesfile = ~/.gitignore_global
