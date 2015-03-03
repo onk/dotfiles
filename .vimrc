@@ -13,6 +13,7 @@ NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'LeafCage/foldCC'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'glidenote/nogistub.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -35,6 +36,10 @@ set foldtext=FoldCCtext()
 set fillchars=vert:\|
 let g:foldCCtext_tail = 'printf("   %s[%4d lines  Lv%-2d]%s",
     \ v:folddashes, v:foldend-v:foldstart+1, v:foldlevel, v:folddashes)'
+
+" glidenote/nogistub.vim
+let g:nogistub_url = "http://gistub.drecom.dc"
+let g:nogistub_open_browser_after_post = 1
 
 " nathanaelkane/vim-indent-guides
 let indent_guides_auto_colors = 0
