@@ -17,11 +17,11 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nishigori/increment-activator'
+NeoBundle 'othree/eregex.vim'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'othree/eregex.vim'
 
 " colors
 NeoBundle 'tpope/vim-vividchalk'
