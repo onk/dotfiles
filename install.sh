@@ -6,3 +6,4 @@ ln -sf $DOTFILES_DIR/.gitignore_global $HOME/.gitignore_global
 ln -sf $DOTFILES_DIR/.tigrc $HOME/.tigrc
 ln -sfh $DOTFILES_DIR/.byobu $HOME/.byobu
 ln -sf $DOTFILES_DIR/.vimrc $HOME/.vimrc
+ln -sf $DOTFILES_DIR/.gemrc $HOME/.gemrc
