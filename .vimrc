@@ -38,7 +38,6 @@ let g:foldCCtext_tail = 'printf("   %s[%4d lines  Lv%-2d]%s",
     \ v:folddashes, v:foldend-v:foldstart+1, v:foldlevel, v:folddashes)'
 
 " glidenote/nogistub.vim
-let g:nogistub_url = "http://gistub.drecom.dc"
 let g:nogistub_open_browser_after_post = 1
 
 " nathanaelkane/vim-indent-guides
@@ -152,3 +151,10 @@ endfunction
 set t_Co=256
 colorscheme vividchalk
 set background=dark
+
+" ======================================================================
+" load local setting
+" ----------------------------------------------------------------------
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
