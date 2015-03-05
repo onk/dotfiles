@@ -104,7 +104,7 @@ set fileformats=unix,dos,mac
 set clipboard=unnamed
 set wildmenu
 set wildmode=list:longest
-set backspace=start,indent
+set backspace=start,indent,eol
 set display=lastline
 
 " 表示行単位の移動
