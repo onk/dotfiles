@@ -7,3 +7,4 @@ ln -sf $DOTFILES_DIR/.tigrc $HOME/.tigrc
 ln -sfh $DOTFILES_DIR/.byobu $HOME/.byobu
 ln -sf $DOTFILES_DIR/.vimrc $HOME/.vimrc
 ln -sf $DOTFILES_DIR/.gemrc $HOME/.gemrc
+ln -sf $DOTFILES_DIR/.railsrc $HOME/.railsrc
