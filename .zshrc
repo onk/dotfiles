@@ -27,6 +27,10 @@ if [ -f ~/.zsh/my_prompt.zsh ]; then
   source ~/.zsh/my_prompt.zsh
 fi
 
+# completion
+zstyle ':completion:*:default' menu select
+setopt list_packed
+
 # C-S, C-Q によるフロー制御を使わない
 setopt NO_FLOW_CONTROL
 
