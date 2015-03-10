@@ -87,3 +87,8 @@ fi
 if [ -f ~/.zsh/my_peco.zsh ]; then
   source ~/.zsh/my_peco.zsh
 fi
+
+# zsh-bd
+if [ -f ~/.zsh/plugins/bd/bd.zsh ]; then
+  source ~/.zsh/plugins/bd/bd.zsh
+fi
