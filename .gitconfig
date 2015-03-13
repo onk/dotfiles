@@ -35,3 +35,6 @@
 
 [ghq]
   root = ~/src
+
+[include]
+  path = .gitconfig.local
