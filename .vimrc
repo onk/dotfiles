@@ -74,6 +74,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 " nishigori/increment-activator
 let g:increment_activator_filetype_candidates = {
     \ '_' : [
+    \   ['月', '火', '水', '木', '金', '土', '日'],
     \ ],
     \ 'gitrebase': [
     \   ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
