@@ -40,6 +40,9 @@ set fillchars=vert:\|
 let g:foldCCtext_tail = 'printf("   %s[%4d lines  Lv%-2d]%s",
     \ v:folddashes, v:foldend-v:foldstart+1, v:foldlevel, v:folddashes)'
 
+" ctrlpvim/ctrlp.vim
+let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")':[], 'AcceptSelection("t")': ['<cr>'] }
+
 " glidenote/nogistub.vim
 let g:nogistub_open_browser_after_post = 1
 
