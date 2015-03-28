@@ -92,3 +92,21 @@ fi
 if [ -f ~/.zsh/plugins/bd/bd.zsh ]; then
   source ~/.zsh/plugins/bd/bd.zsh
 fi
+
+# http://ukstudio.jp/2015/03/26/open_pull_request/
+function find-pr() {
+  local parent=$2||'master'
+  git log $1..$2 --merges --ancestry-path --reverse --oneline | head -n1
+}
+
+function find-pr-open() {
+  local pr="$(find-pr $1 $2 | awk '{print substr($5, 2)}')"
+  local repo="$(git config --get remote.origin.url | sed 's#ssh://git@#https://#' | sed 's/\.git$//')"
+  open "${repo}/pull/${pr}"
+}
+
+function find-mr-open() {
+  local pr="$(find-pr $1 $2 | awk '{print substr($7, 2)}')"
+  local repo="$(git config --get remote.origin.url | sed 's#ssh://git@#http://#' | sed 's/\.git$//')"
+  open "${repo}/merge_requests/${pr}"
+}
