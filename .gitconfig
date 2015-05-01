@@ -25,6 +25,8 @@
   re = reset HEAD~1
   ri = rebase -i
   s = status -sb
+  sweep-branch-develop = !git branch --delete $(git branch --merged develop | egrep -v '^(\\*| ) develop$')
+  sweep-branch-master = !git branch --delete $(git branch --merged master | egrep -v '^(\\*| ) master$')
   sq = push sqale sqale:master
 
 [core]
