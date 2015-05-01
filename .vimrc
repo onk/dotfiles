@@ -17,6 +17,7 @@ NeoBundle 'glidenote/nogistub.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nishigori/increment-activator'
 NeoBundle 'othree/eregex.vim'
@@ -65,6 +66,9 @@ call smartinput#define_rule({
 \ 'filetype': ['ruby'],
 \ 'syntax': ['rubyDoBlock']
 \ })
+
+" majutsushi/tagbar
+nnoremap <silent> <C-o> :<C-u>TagbarToggle<CR>
 
 " nathanaelkane/vim-indent-guides
 let indent_guides_auto_colors = 0
