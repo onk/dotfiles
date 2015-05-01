@@ -20,7 +20,7 @@
   mm = merge origin/master --ff
   ph = push origin HEAD
   phf = push origin HEAD --force-with-lease
-  r = rebase
+  r = rebase -p
   rc = rebase --continue
   re = reset HEAD~1
   ri = rebase -i
