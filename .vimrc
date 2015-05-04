@@ -182,6 +182,9 @@ endfunction
 " markdown は 4 スペ
 autocmd FileType mkd setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
+" xml の folding
+let g:xml_syntax_folding = 1
+
 " ======================================================================
 " color
 " ----------------------------------------------------------------------
