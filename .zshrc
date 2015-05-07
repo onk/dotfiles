@@ -38,6 +38,7 @@ alias -g RD='RAILS_ENV=development'
 alias -g RT='RAILS_ENV=test'
 alias -g RP='RAILS_ENV=production'
 alias -g CSU='| cut -d":" -f1 | sort | uniq'
+alias rm="gomi"
 alias g="git"
 alias s="git status -sb"
 alias r="bundle exec rails"
