@@ -20,10 +20,11 @@
   mm = merge origin/master --ff
   ph = push origin HEAD
   phf = push origin HEAD --force-with-lease
-  r = rebase -p
+  r = rebase
   rc = rebase --continue
   re = reset HEAD~1
   ri = rebase -i
+  rp = rebase -p
   s = status -sb
   sweep-branch-develop = !git branch --delete $(git branch --merged develop | egrep -v '^(\\*| ) develop$')
   sweep-branch-master = !git branch --delete $(git branch --merged master | egrep -v '^(\\*| ) master$')
