@@ -50,7 +50,7 @@ alias sbi="SOCKS_PROXY=localhost:1080 bundle-socks install --path ~/.bundle --bi
 alias cod="git checkout develop"
 alias com="git checkout master"
 alias cow="git checkout working"
-function v() {vi ${${=*/:/ +}/:*}}
+function v() {vi -p ${${=*/:/ +}/:*}}
 
 case "${OSTYPE}" in
   darwin*)
