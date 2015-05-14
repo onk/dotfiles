@@ -17,7 +17,7 @@ function peco-select-history() {
   else
     tac="tail -r"
   fi
-  BUFFER=$(\history -n 1 | \
+  BUFFER=$(\history -n -100000 | \
     eval $tac | \
     awk '!a[$0]++' | \
     peco --query "$LBUFFER")
