@@ -1,5 +1,6 @@
 set vertical-split = horizontal
 set commit-order = topo
+set line-graphics = utf-8
 
 # view
 # set main-view = line-number:no,interval=5 id:no date:default author:full commit-title:yes,graph,refs,overflow=no
