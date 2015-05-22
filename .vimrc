@@ -35,6 +35,8 @@ call neobundle#end()
 filetype plugin indent on
 syntax on
 
+NeoBundleCheck
+
 " LeafCage/foldCC
 " @see http://d.hatena.ne.jp/leafcage/20111223/1324705686
 set foldtext=FoldCCtext()
