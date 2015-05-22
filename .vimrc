@@ -4,7 +4,6 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 " ======================================================================
 " plugins
@@ -31,6 +30,7 @@ NeoBundle 'tpope/vim-fugitive'
 
 " colors
 NeoBundle 'tpope/vim-vividchalk'
+call neobundle#end()
 
 filetype plugin indent on
 syntax on
