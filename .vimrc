@@ -8,9 +8,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ======================================================================
 " plugins
 " ----------------------------------------------------------------------
+let g:make = 'gmake'
+if system('uname -o') =~ '^GNU/'
+  let g:make = 'make'
+endif
+
 NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'LeafCage/foldCC'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'glidenote/nogistub.vim'
 NeoBundle 'h1mesuke/vim-alignta'
