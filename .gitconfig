@@ -9,6 +9,7 @@
   ba = branch -a
   bm = branch -a --merged
   bn = branch -a --no-merged
+  cancel = !git add . && git commit -m 'Temporary commit for cancel' && git reset --hard HEAD~
   ch = cherry-pick
   ci = commit -v
   co = checkout
