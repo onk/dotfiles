@@ -199,6 +199,7 @@ let g:xml_syntax_folding = 1
 set t_Co=256
 colorscheme vividchalk
 set background=dark
+hi Search term=reverse ctermfg=black ctermbg=brown
 
 " ======================================================================
 " load local setting
