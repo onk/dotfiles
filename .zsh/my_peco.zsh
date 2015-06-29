@@ -10,6 +10,7 @@ function peco-src () {
 zle -N peco-src
 bindkey '^s' peco-src
 
+# C-r を peco で行う
 function peco-select-history() {
   local tac
   if which tac > /dev/null; then
@@ -27,13 +28,14 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# B でブランチ選択
 function peco-git-branch() {
   git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"
 }
+alias -g B='$(peco-git-branch)'
 
+# F で git status からファイル選択
 function peco-git-changed-files() {
   git status -s | peco --prompt "multi: C-Space>" | awk '{print $2}'
 }
-
-alias -g B='$(peco-git-branch)'
 alias -g F='$(peco-git-changed-files)'
