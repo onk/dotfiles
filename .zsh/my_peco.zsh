@@ -39,3 +39,17 @@ function peco-git-changed-files() {
   git status -s | peco --prompt "multi: C-Space>" | awk '{print $2}'
 }
 alias -g F='$(peco-git-changed-files)'
+
+# genymotion_peco
+function genymotion_peco() {
+  local player="/Applications/Genymotion.app/Contents/MacOS/player"
+  # local つけるとエラー
+  # "Google Nexus 5 - 4.4.4 - API 19 - 1080x1920"
+  # genymotion_peco:local:2: not an identifier: 5
+  vm_name=`VBoxManage list vms | peco | gsed "s/\"\(.*\)\".*/\1/"`
+  if [ -n "$vm_name" ]; then
+    echo "boot $vm_name"
+    $player --vm-name "$vm_name" &
+  fi
+  unset vm_name
+}
