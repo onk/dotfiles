@@ -85,6 +85,9 @@ if [ -z "${GOPATH:-}" ]; then
   PATH=$PATH:$GOPATH/bin
 fi
 
+# android
+PATH=$PATH:$HOME/.android/platform-tools
+
 # peco
 if [ -f ~/.zsh/my_peco.zsh ]; then
   source ~/.zsh/my_peco.zsh
