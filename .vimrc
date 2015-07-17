@@ -197,6 +197,10 @@ colorscheme vividchalk
 set background=dark
 hi Search term=reverse ctermfg=black ctermbg=brown
 
+" カーソル行を強調
+set cursorline
+highlight CursorLine ctermbg=234 cterm=NONE
+
 " ======================================================================
 " load local setting
 " ----------------------------------------------------------------------
