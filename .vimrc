@@ -46,7 +46,7 @@ let g:foldCCtext_tail = 'printf("   %s[%4d lines  Lv%-2d]%s",
 
 " ctrlpvim/ctrlp.vim
 let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")':[], 'AcceptSelection("t")': ['<cr>'] }
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|vendor/assets/bower_components|tmp/cache)$'
 
 " glidenote/nogistub.vim
 let g:nogistub_open_browser_after_post = 1
