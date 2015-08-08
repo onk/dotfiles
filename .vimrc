@@ -25,6 +25,7 @@ NeoBundle 'rhysd/committia.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'sophacles/vim-processing'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
 
@@ -108,6 +109,12 @@ let g:quickrun_config._ = { 'runner' : 'vimproc' }
 let g:quickrun_config['ruby.rspec'] = {
     \ 'command' : 'rspec',
     \ 'exec' : 'bundle exec %c %o %s %a',
+    \ 'split' : '',
+    \ 'runner/vimproc/updatetime' : 10,
+    \ }
+let g:quickrun_config['processing'] =  {
+    \ 'command' : 'processing-java',
+    \ 'exec' : '%c --sketch=%s:p:h --output=%s:p:h/build --run --force',
     \ 'split' : '',
     \ 'runner/vimproc/updatetime' : 10,
     \ }
