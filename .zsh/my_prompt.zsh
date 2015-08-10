@@ -16,6 +16,10 @@ zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 
+cruby_version_string() {
+  echo "%F{3}($(chruby | grep '\*' | tr -d '* '))%f"
+}
+
 # or use pre_cmd, see man zshcontrib
 vcs_info_wrapper() {
   vcs_info
@@ -23,4 +27,4 @@ vcs_info_wrapper() {
     echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
   fi
 }
-RPROMPT=$'$(vcs_info_wrapper)'
+RPROMPT=$'$(cruby_version_string) $(vcs_info_wrapper)'
