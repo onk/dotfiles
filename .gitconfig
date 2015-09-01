@@ -38,6 +38,11 @@
 [interactive]
   singlekey = true
 
+[pager]
+  log = ~/bin/diff-highlight | less
+  show = ~/bin/diff-highlight | less
+  diff = ~/bin/diff-highlight | less
+
 [ghq]
   root = ~/src
 
