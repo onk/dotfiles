@@ -116,3 +116,13 @@ function find-mr-open() {
   local repo="$(git config --get remote.origin.url | sed 's#ssh://git@#http://#' | sed 's/\.git$//')"
   open "${repo}/merge_requests/${pr}"
 }
+
+function rm_xattr() {
+  for file in $*
+  do
+    for attr in $(xattr $file)
+    do
+      xattr -d $attr $file
+    done
+  done
+}
