@@ -5,7 +5,6 @@ brew update
 brew upgrade
 
 # peco
-brew tap peco/peco
 brew install peco
 
 # opencv
