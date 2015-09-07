@@ -87,3 +87,4 @@ brew install Caskroom/cask/astrill
 brew install Caskroom/cask/processing
 brew install Caskroom/cask/mysqlworkbench
 brew install Caskroom/cask/charles
+brew install Caskroom/cask/dockertoolbox
