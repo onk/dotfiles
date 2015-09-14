@@ -88,3 +88,4 @@ brew install Caskroom/cask/processing
 brew install Caskroom/cask/mysqlworkbench
 brew install Caskroom/cask/charles
 brew install Caskroom/cask/dockertoolbox
+brew install Caskroom/cask/fluid
