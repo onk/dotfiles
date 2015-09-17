@@ -1,3 +1,4 @@
+#!/bin/sh
 DOTFILES_DIR=$HOME/dotfiles
 ln -sf $DOTFILES_DIR/.zshrc $HOME/.zshrc
 ln -sfn $DOTFILES_DIR/.zsh $HOME/.zsh
