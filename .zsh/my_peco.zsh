@@ -53,3 +53,15 @@ function genymotion_peco() {
   fi
   unset vm_name
 }
+
+# http://blog.livedoor.jp/sonots/archives/45320578.html
+function ec2-ssh() {
+  hosts="$(EC2_HOST_CONFIG_FILE=~/.aws/ec2_host_config ec2-host -j $*)"
+  head=$(echo $hosts | head -1)
+  if [ "$hosts" = "$head" ]; then
+    ssh $(echo "$head" | jq -r .private_ip_address)
+  else
+    host=$(echo "$hosts" | peco)
+    ssh $(echo $host | jq -r .private_ip_address)
+  fi
+}
