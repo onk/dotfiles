@@ -1,6 +1,6 @@
 # pecoとghqでローカルのリポジトリクローンに飛ぶ
 function peco-src () {
-  local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+  local selected_dir=$(ghq list --full-path | peco --prompt "PROJECT>" --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -21,7 +21,7 @@ function peco-select-history() {
   BUFFER=$(\history -n -100000 | \
     eval $tac | \
     awk '!a[$0]++' | \
-    peco --query "$LBUFFER")
+    peco --prompt "HISTORY>" --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle clear-screen
 }
