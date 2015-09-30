@@ -14,6 +14,7 @@ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': 'make'}}
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'glidenote/nogistub.vim'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'majutsushi/tagbar'
@@ -54,6 +55,9 @@ let g:ctrlp_custom_ignore = {
 
 " glidenote/nogistub.vim
 let g:nogistub_open_browser_after_post = 1
+
+" itchyny/lightline.vim
+set laststatus=2
 
 " kana/vim-smartinput
 " @see http://qiita.com/hara/items/1d30f6a6354fa480184b
