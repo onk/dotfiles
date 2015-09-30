@@ -58,6 +58,17 @@ let g:nogistub_open_browser_after_post = 1
 
 " itchyny/lightline.vim
 set laststatus=2
+let g:lightline = {}
+let g:lightline.enable = {
+\ 'statusline': 1,
+\ 'tabline': 0
+\ }
+let g:lightline.active = {
+\ 'left': [ [ 'mode', 'paste' ],
+\           [ 'readonly', 'relativepath', 'modified' ] ],
+\ 'right': [ [ 'lineinfo' ],
+\            [ 'percent' ],
+\            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 
 " kana/vim-smartinput
 " @see http://qiita.com/hara/items/1d30f6a6354fa480184b
