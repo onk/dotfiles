@@ -128,3 +128,8 @@ function rm_xattr() {
     done
   done
 }
+
+# docker-machine
+if [ $(docker-machine status default) = Running ]; then
+   eval "$(docker-machine env default)"
+fi
