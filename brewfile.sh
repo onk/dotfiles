@@ -79,7 +79,6 @@ brew install Caskroom/cask/vagrant
 brew install Caskroom/cask/virtualbox
 brew install Caskroom/cask/genymotion
 brew install Caskroom/cask/skype
-brew install Caskroom/cask/coteditor
 brew install Caskroom/cask/cyberduck
 brew install Caskroom/cask/libreoffice
 brew install Caskroom/cask/sequel-pro
