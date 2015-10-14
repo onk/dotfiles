@@ -13,12 +13,3 @@ mkdir -p $HOME/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim
 ln -sf $DOTFILES_DIR/.gemrc $HOME/.gemrc
 ln -sf $DOTFILES_DIR/.railsrc $HOME/.railsrc
-mkdir -p $HOME/bin
-# mac
-if [ -f /usr/local/share/git-core/contrib/diff-highlight/diff-highlight ]
-  ln -sf /usr/local/share/git-core/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
-fi
-# debian
-if [ -f /usr/share/doc/git/contrib/diff-highlight/diff-highlight ]
-  ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
-fi
