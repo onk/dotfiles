@@ -35,6 +35,9 @@
 [core]
   excludesfile = ~/.gitignore_global
 
+[init]
+  templatedir = ~/.git_template
+
 [interactive]
   singlekey = true
 

@@ -1,0 +1,22 @@
+#!/bin/sh
+# http://qiita.com/uasi/items/a340bb487ec07caac799
+# http://qiita.com/fmy/items/653557279c2209a1bc88
+
+PRIVATE_NAME="oonaka_takafumi"
+PRIVATE_EMAIL="takafumi.oonaka@drecom.co.jp"
+
+PRIVATE_DIR="$(ghq root)/git.drecom.jp"
+
+# git clone 時以外の checkout では何もしない
+if [ $1 != "0000000000000000000000000000000000000000" ]; then
+  exit 0
+fi
+
+if [ $(pwd | fgrep "$PRIVATE_DIR") ]; then
+  if [ -z "`git config --local user.name`" ]; then
+    git config user.name "$PRIVATE_NAME"
+    git config user.email "$PRIVATE_EMAIL"
+    echo "NOTE: set locally user.name."
+  fi
+fi
+exit 0
