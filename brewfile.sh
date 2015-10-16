@@ -4,6 +4,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew update
 brew upgrade
 
+brew tap homebrew/services
+
 # peco
 brew install peco
 
