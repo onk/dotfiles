@@ -50,6 +50,7 @@ function genymotion_peco() {
   if [ -n "$vm_name" ]; then
     echo "boot $vm_name"
     $player --vm-name "$vm_name" &
+    disown "%`jobs | ruby -e "STDIN.each {|line| m = /\A\[(\d+)\]/.match(line); puts m[1] }"`"
   fi
   unset vm_name
 }
