@@ -74,6 +74,7 @@ brew install swfmill
 brew install ctags
 brew install pidcat
 brew install mycli
+brew install mitmproxy
 
 brew install Caskroom/cask/google-chrome
 brew install Caskroom/cask/filezilla
@@ -87,6 +88,5 @@ brew install Caskroom/cask/sequel-pro
 brew install Caskroom/cask/astrill
 brew install Caskroom/cask/processing
 brew install Caskroom/cask/mysqlworkbench
-brew install Caskroom/cask/charles
 brew install Caskroom/cask/dockertoolbox
 brew install Caskroom/cask/fluid
