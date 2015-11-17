@@ -54,6 +54,7 @@ alias cod="git checkout develop"
 alias com="git checkout master"
 alias cow="git checkout working"
 alias my="mycli -u root"
+alias tree="tree --charset=C"
 function v() {vi -p ${${=*/:/ +}/:*}}
 
 case "${OSTYPE}" in
