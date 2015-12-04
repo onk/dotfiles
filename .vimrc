@@ -63,6 +63,7 @@ let g:lightline.enable = {
 \ 'statusline': 1,
 \ 'tabline': 0
 \ }
+" filename -> relativepath に変更
 let g:lightline.active = {
 \ 'left': [ [ 'mode', 'paste' ],
 \           [ 'readonly', 'relativepath', 'modified' ] ],
