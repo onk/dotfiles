@@ -20,6 +20,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nishigori/increment-activator'
+NeoBundle 'osyo-manga/vim-anzu'
 NeoBundle 'othree/eregex.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rhysd/committia.vim'
@@ -64,12 +65,14 @@ let g:lightline.enable = {
 \ 'tabline': 0
 \ }
 " filename -> relativepath に変更
+" anzu 追加
 let g:lightline.active = {
 \ 'left': [ [ 'mode', 'paste' ],
-\           [ 'readonly', 'relativepath', 'modified' ] ],
+\           [ 'readonly', 'relativepath', 'modified', 'anzu' ] ],
 \ 'right': [ [ 'lineinfo' ],
 \            [ 'percent' ],
 \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+let g:lightline.component_function = { 'anzu': 'anzu#search_status' }
 
 " kana/vim-smartinput
 " @see http://qiita.com/hara/items/1d30f6a6354fa480184b
@@ -115,6 +118,18 @@ let g:increment_activator_filetype_candidates = {
     \   ['get', 'post', 'put', 'delete'],
     \ ],
     \ }
+
+
+" osyo-manga/vim-anzu
+nmap n <Plug>(anzu-n)zvzz
+nmap N <Plug>(anzu-N)zvzz
+nmap * <Plug>(anzu-star)
+nmap # <Plug>(anzu-sharp)
+" @see http://qiita.com/shiena/items/f53959d62085b7980cb5
+augroup vim-anzu
+  autocmd!
+  autocmd CursorHold,CursorHoldI,WinLeave,TabLeave * call anzu#clear_search_status()
+augroup END
 
 " thinca/vim-quickrun
 augroup QuickrunRSpec
@@ -191,10 +206,6 @@ nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
 nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
 vnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zcgv' : 'h'
 vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
-
-" 検索後、真ん中にフォーカスをあわせる
-nnoremap n  nzvzz
-nnoremap N  Nzvzz
 
 " テキストの整形方法(改行時の自動コメントアウト等)を調整
 autocmd FileType * setlocal formatoptions=tcqnlmMj
