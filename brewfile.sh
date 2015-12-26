@@ -75,6 +75,7 @@ brew install ctags
 brew install pidcat
 brew install mycli
 brew install mitmproxy
+brew install git-secrets
 
 brew install Caskroom/cask/google-chrome
 brew install Caskroom/cask/filezilla
