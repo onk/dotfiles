@@ -82,7 +82,7 @@ function chpwd() {
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
-chruby 2.3.0-dev
+chruby 2.4.0-dev
 
 # gopath
 if [ -z "${GOPATH:-}" ]; then
