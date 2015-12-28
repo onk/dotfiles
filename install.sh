@@ -14,3 +14,4 @@ git clone https://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundl
 ln -sf $DOTFILES_DIR/.gemrc $HOME/.gemrc
 ln -sf $DOTFILES_DIR/.railsrc $HOME/.railsrc
 ln -sfn $DOTFILES_DIR/.git_template $HOME/.git_template
+ln -sfn $DOTFILES_DIR/.peco $HOME/.peco

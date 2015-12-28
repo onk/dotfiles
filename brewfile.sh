@@ -8,6 +8,7 @@ brew tap homebrew/services
 
 # peco
 brew install peco
+brew install migemogrep
 
 # opencv
 brew tap homebrew/science
