@@ -19,6 +19,7 @@
   fix = commit -v --amend
   md = merge origin/develop --ff
   mm = merge origin/master --ff
+  n = now --all --stat
   ph = push origin HEAD
   phf = push origin HEAD --force-with-lease
   r = rebase
