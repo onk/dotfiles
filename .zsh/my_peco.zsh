@@ -42,7 +42,7 @@ alias -g F='$(peco-git-changed-files)'
 
 # genymotion_peco
 function genymotion_peco() {
-  local player="/Applications/Genymotion.app/Contents/MacOS/player"
+  local player="/Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS/player"
   # local つけるとエラー
   # "Google Nexus 5 - 4.4.4 - API 19 - 1080x1920"
   # genymotion_peco:local:2: not an identifier: 5
