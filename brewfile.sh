@@ -51,7 +51,6 @@ brew install tree
 brew install watch
 brew install nkf
 brew install tcpflow
-brew install htop-osx
 brew install tig --with-docs
 brew install byobu
 brew install ag
