@@ -70,7 +70,6 @@ brew install sox
 brew install taglib
 brew install graphviz
 brew install plantuml
-brew install swfmill
 brew install ctags
 brew install pidcat
 brew install mycli
