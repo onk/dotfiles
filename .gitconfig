@@ -14,7 +14,7 @@
   ci = commit -v
   co = checkout
   d = diff -b
-  dc = diff --cached -b
+  ds = diff --staged -b
   f = fetch -p
   fix = commit -v --amend
   md = merge origin/develop --ff
