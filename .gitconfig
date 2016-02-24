@@ -11,6 +11,7 @@
   bn = branch -a --no-merged
   cancel = !git add . && git commit -m 'Temporary commit for cancel' && git reset --hard HEAD~
   ch = cherry-pick
+  chm = cherry-pick -x -m 1
   ci = commit -v
   co = checkout
   d = diff -b
