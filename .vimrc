@@ -114,7 +114,7 @@ let g:increment_activator_filetype_candidates = {
     \   ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
     \ ],
     \ 'ruby.rspec': [
-    \   ['it', 'xit'],
+    \   ['it', 'fit', 'xit'],
     \   ['get', 'post', 'put', 'delete'],
     \ ],
     \ }
