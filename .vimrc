@@ -21,7 +21,6 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nishigori/increment-activator'
 NeoBundle 'osyo-manga/vim-anzu'
-NeoBundle 'othree/eregex.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'rking/ag.vim'
@@ -206,6 +205,9 @@ nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
 nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
 vnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zcgv' : 'h'
 vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
+
+" regex very magic
+nnoremap / /\v
 
 " テキストの整形方法(改行時の自動コメントアウト等)を調整
 autocmd FileType * setlocal formatoptions=tcqnlmMj
