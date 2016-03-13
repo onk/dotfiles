@@ -13,5 +13,6 @@ mkdir -p $HOME/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim
 ln -sf $DOTFILES_DIR/.gemrc $HOME/.gemrc
 ln -sf $DOTFILES_DIR/.railsrc $HOME/.railsrc
+ln -sf $DOTFILES_DIR/.pryrc $HOME/.pryrc
 ln -sfn $DOTFILES_DIR/.git_template $HOME/.git_template
 ln -sfn $DOTFILES_DIR/.peco $HOME/.peco
