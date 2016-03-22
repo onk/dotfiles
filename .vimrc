@@ -28,6 +28,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'sophacles/vim-processing'
+NeoBundle 'tanabe/ToggleCase-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
 
@@ -135,6 +136,10 @@ augroup vim-anzu
   autocmd!
   autocmd CursorHold,CursorHoldI,WinLeave,TabLeave * call anzu#clear_search_status()
 augroup END
+
+" tanabe/ToggleCase-vim
+" @see http://blog.kaihatsubu.com/?p=2049
+nnoremap <silent> <C-k> :<C-u>call ToggleCase()<CR>
 
 " thinca/vim-quickrun
 augroup QuickrunRSpec
