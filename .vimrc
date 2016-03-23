@@ -217,6 +217,9 @@ nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
 vnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zcgv' : 'h'
 vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
 
+" 誤爆してウザいので
+nnoremap q: <NOP>
+
 " regex very magic
 nnoremap / /\v
 
