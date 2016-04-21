@@ -254,6 +254,10 @@ hi Search term=reverse ctermfg=black ctermbg=brown
 set cursorline
 highlight CursorLine ctermbg=234 cterm=NONE
 
+" 全角スペースの表示
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue
+match ZenkakuSpace /　/
+
 " ======================================================================
 " load local setting
 " ----------------------------------------------------------------------
