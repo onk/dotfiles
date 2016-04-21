@@ -23,6 +23,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nishigori/increment-activator'
 NeoBundle 'osyo-manga/vim-anzu'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/syntastic'
@@ -136,6 +137,9 @@ augroup vim-anzu
   autocmd!
   autocmd CursorHold,CursorHoldI,WinLeave,TabLeave * call anzu#clear_search_status()
 augroup END
+
+" rhysd/clever-f.vim
+let g:clever_f_fix_key_direction = 1
 
 " tanabe/ToggleCase-vim
 " @see http://blog.kaihatsubu.com/?p=2049
