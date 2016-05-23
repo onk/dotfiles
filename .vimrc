@@ -9,7 +9,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " plugins
 " ----------------------------------------------------------------------
 NeoBundle 'AndrewRadev/linediff.vim'
-NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'LeafCage/foldCC'
 NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': 'make'}}
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -41,11 +40,6 @@ filetype plugin indent on
 syntax on
 
 NeoBundleCheck
-
-" AndrewRadev/splitjoin.vim
-let g:splitjoin_join_mapping = 'J'
-let g:splitjoin_align = 1
-let g:splitjoin_trailing_comma = 1
 
 " LeafCage/foldCC
 " @see http://d.hatena.ne.jp/leafcage/20111223/1324705686
