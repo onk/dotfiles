@@ -84,6 +84,9 @@ function chpwd() {
 source /usr/local/share/chruby/chruby.sh
 chruby 2.4.0-dev
 
+# spring
+export DISABLE_SPRING=1
+
 # gopath
 if [ -z "${GOPATH:-}" ]; then
   export GOPATH=$HOME/go
