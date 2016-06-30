@@ -33,6 +33,7 @@ NeoBundle 'sophacles/vim-processing'
 NeoBundle 'tanabe/ToggleCase-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundleFetch 'jszakmeister/markdown2ctags'
 
 " colors
 NeoBundle 'tpope/vim-vividchalk'
@@ -99,6 +100,21 @@ call smartinput#define_rule({
 
 " majutsushi/tagbar
 nnoremap <silent> <C-o> :<C-u>TagbarToggle<CR>
+" @see https://github.com/majutsushi/tagbar/wiki#markdown
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : $HOME . '/.vim/bundle/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
 
 " nathanaelkane/vim-indent-guides
 let indent_guides_auto_colors = 0
