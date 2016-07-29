@@ -40,6 +40,12 @@ function peco-git-changed-files() {
 }
 alias -g F='$(peco-git-changed-files)'
 
+# vv で git 管理下のファイルを vim で開く。更新順に並び替えしてある
+function peco-git-ls-files() {
+  git ls-files | egrep "\.(rb|slim|erb)$"  | xargs ls -At | peco --prompt "FILES>"
+}
+alias vv='vim -p $(peco-git-ls-files)'
+
 # genymotion_peco
 function genymotion_peco() {
   local player="/Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS/player"
