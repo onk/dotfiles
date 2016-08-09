@@ -81,3 +81,4 @@ brew install Caskroom/cask/libreoffice
 brew install Caskroom/cask/processing
 brew install Caskroom/cask/dockertoolbox
 brew install Caskroom/cask/fluid
+brew install Caskroom/cask/processing
