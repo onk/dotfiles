@@ -35,6 +35,9 @@ setopt list_packed
 # C-S, C-Q によるフロー制御を使わない
 setopt NO_FLOW_CONTROL
 
+bindkey "^F" forward-word
+bindkey "^B" backward-word
+
 alias -g RD='RAILS_ENV=development'
 alias -g RT='RAILS_ENV=test'
 alias -g RP='RAILS_ENV=production'
