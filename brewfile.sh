@@ -12,10 +12,6 @@ brew install migemogrep
 brew tap homebrew/science
 brew install opencv
 
-# clang-format
-brew tap tcr/tcr
-brew install clang-format
-
 brew install coreutils
 
 brew install readline
