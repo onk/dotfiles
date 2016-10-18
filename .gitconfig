@@ -37,9 +37,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-
-[init]
-  templatedir = ~/.git_template
+  hooksPath = ~/.git_hooks
 
 [interactive]
   singlekey = true
