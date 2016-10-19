@@ -1,0 +1,7 @@
+#!/bin/sh
+branch="$(git symbolic-ref HEAD 2>/dev/null)" || "$(git describe --contains --all HEAD)"
+if [ "${branch##refs/heads/}" = "master" ]; then
+  echo "Can't commit on master branch."
+  echo "Please commit on topic branch."
+  exit 1
+fi
