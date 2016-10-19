@@ -240,6 +240,9 @@ vnoremap <expr> l foldclosed(line('.')) != -1 ? 'zogv0' : 'l'
 " 誤爆してウザいので
 nnoremap q: <NOP>
 
+" Esc 2連打で nohlsearch
+nnoremap <silent><Esc><Esc> :<C-u>nohlsearch<CR>
+
 " regex very magic
 nnoremap / /\v
 
