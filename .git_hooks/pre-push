@@ -6,4 +6,8 @@ do
     echo "Can't push to master branch."
     exit 1
   fi
+  if [ "${remote_ref##refs/heads/}" = "develop" ]; then
+    echo "Can't push to develop branch."
+    exit 1
+  fi
 done
