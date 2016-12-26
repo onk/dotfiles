@@ -85,7 +85,7 @@ function chpwd() {
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
-chruby 2.4.0-dev
+chruby 2.5.0-dev
 
 # spring
 export DISABLE_SPRING=1
