@@ -13,5 +13,7 @@ bind diff g move-first-line
 bind diff G move-last-line
 bind stage g move-first-line
 bind stage G move-last-line
+bind blame g move-first-line
+bind blame G move-last-line
 bind diff <Ctrl-n> :/^@@
 bind diff <Ctrl-p> :?^@@
