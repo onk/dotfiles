@@ -60,6 +60,7 @@ alias com="git checkout master"
 alias cow="git checkout working"
 alias my="mycli -u root"
 alias tree="tree --charset=C"
+alias dc="docker-compose"
 function v() {vi -p ${${=*/:/ +}/:*}}
 
 case "${OSTYPE}" in
@@ -138,8 +139,3 @@ function rm_xattr() {
     done
   done
 }
-
-# docker-machine
-if [ $(docker-machine status default) = Running ]; then
-   eval "$(docker-machine env default)"
-fi
