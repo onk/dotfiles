@@ -14,6 +14,7 @@
   chm = cherry-pick -x -m 1
   ci = commit -v
   co = checkout
+  con = diff --name-only --diff-filter=U
   d = diff -b
   ds = diff --staged -b
   f = fetch -p
