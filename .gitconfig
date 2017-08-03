@@ -13,6 +13,7 @@
   ch = cherry-pick
   chm = cherry-pick -x -m 1
   ci = commit -v
+  cl = clean -fd
   co = checkout
   con = diff --name-only --diff-filter=U
   d = diff -b
