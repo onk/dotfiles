@@ -86,6 +86,24 @@ function chpwd() {
   esac
 }
 
+# enter したら git status
+# http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
+function do_enter() {
+    if [ -n "$BUFFER" ]; then
+        zle accept-line
+        return 0
+    fi
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+      echo
+      git status -sb
+      echo
+    fi
+    zle reset-prompt
+    return 0
+}
+zle -N do_enter
+bindkey '^m' do_enter
+
 # chruby
 source /usr/local/share/chruby/chruby.sh
 chruby 2.5.0-dev
