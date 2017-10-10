@@ -10,7 +10,8 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
-setopt NO_BANG_HIST
+setopt BANG_HIST
+setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 function history-all { history -E 1 }
 
