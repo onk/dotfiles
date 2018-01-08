@@ -108,7 +108,7 @@ bindkey '^m' do_enter
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
-chruby 2.5.0-dev
+chruby 2.6.0-dev
 
 # spring
 export DISABLE_SPRING=1
