@@ -45,6 +45,7 @@ alias -g RP='RAILS_ENV=production'
 alias -g CSU='| cut -d":" -f1 | sort | uniq'
 alias -g SUS='| sort | uniq -c | sort -nr'
 alias rm="gomi"
+alias c="ctop"
 alias g="git"
 alias s="git status -sb"
 alias r="bundle exec rails"
