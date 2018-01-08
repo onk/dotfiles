@@ -159,3 +159,20 @@ function rm_xattr() {
     done
   done
 }
+
+# http://blog.kamipo.net/entry/2013/02/20/122225
+function www() {
+  if type ruby > /dev/null; then
+    ruby -run -e httpd -- --port=5000 .
+  elif type python > /dev/null; then
+    if python -V 2>&1 | grep -qm1 'Python 3\.'; then
+      python -m http.server 5000
+    else
+      python -m SimpleHTTPServer 5000
+    fi
+  elif type node > /dev/null; then
+    node -e "var c=require('connect'), d=process.env.PWD; c().use(c.logger()).use(c.static(d)).use(c.directory(d)).listen(5000);"
+  elif type php > /dev/null && php -v | grep -qm1 'PHP 5\.[45]\.'; then
+    php -S 0.0.0.0:5000
+  fi
+}
