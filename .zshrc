@@ -64,6 +64,7 @@ alias cow="git checkout working"
 alias my="mycli -u root"
 alias tree="tree --charset=C"
 alias dc="docker-compose"
+alias cdr="cd \`git rev-parse --show-toplevel\`"
 function v() {vi -p ${${=*/:/ +}/:*}}
 
 case "${OSTYPE}" in
@@ -126,11 +127,6 @@ PATH=$PATH:$HOME/.android/platform-tools
 # peco
 if [ -f ~/.zsh/my_peco.zsh ]; then
   source ~/.zsh/my_peco.zsh
-fi
-
-# zsh-bd
-if [ -f ~/.zsh/plugins/bd/bd.zsh ]; then
-  source ~/.zsh/plugins/bd/bd.zsh
 fi
 
 # http://ukstudio.jp/2015/03/26/open_pull_request/
