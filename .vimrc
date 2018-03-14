@@ -236,6 +236,10 @@ nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 
+" tab 移動
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprevious<CR>
+
 " folding
 nnoremap <expr> h col('.') == 1 && foldlevel(line('.')) > 0 ? 'zc' : 'h'
 nnoremap <expr> l foldclosed(line('.')) != -1 ? 'zo0' : 'l'
