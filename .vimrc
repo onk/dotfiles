@@ -14,6 +14,7 @@ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': 'make'}}
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'glidenote/nogistub.vim'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'haya14busa/vim-edgemotion'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'kana/vim-textobj-user'
@@ -64,6 +65,10 @@ let g:ctrlp_custom_ignore = {
 
 " glidenote/nogistub.vim
 let g:nogistub_open_browser_after_post = 1
+
+" haya14busa/vim-edgemotion
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
 
 " itchyny/lightline.vim
 set laststatus=2
@@ -159,7 +164,7 @@ let g:clever_f_fix_key_direction = 1
 
 " tanabe/ToggleCase-vim
 " @see http://blog.kaihatsubu.com/?p=2049
-nnoremap <silent> <C-k> :<C-u>call ToggleCase()<CR>
+nnoremap <silent> K :<C-u>call ToggleCase()<CR>
 
 " thinca/vim-quickrun
 augroup QuickrunRSpec
