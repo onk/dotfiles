@@ -1,48 +1,43 @@
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+set runtimepath+=$HOME/.vim/bundle/repos/github.com/Shougo/dein.vim
 
-" ======================================================================
-" plugins
-" ----------------------------------------------------------------------
-NeoBundle 'AndrewRadev/linediff.vim'
-NeoBundle 'LeafCage/foldCC'
-NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': 'make'}}
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'glidenote/nogistub.vim'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'haya14busa/vim-edgemotion'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'nishigori/increment-activator'
-NeoBundle 'osyo-manga/vim-anzu'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'pocke/vim-textobj-markdown'
-NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'sophacles/vim-processing'
-NeoBundle 'tanabe/ToggleCase-vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundleFetch 'jszakmeister/markdown2ctags'
+if dein#load_state($HOME . '/.vim/bundle')
+  call dein#begin($HOME . '/.vim/bundle')
+  call dein#add($HOME . '/.vim/bundle/repos/github.com/Shougo/dein.vim')
 
-" colors
-NeoBundle 'tpope/vim-vividchalk'
-call neobundle#end()
+  " Add or remove your plugins here:
+  call dein#add('LeafCage/foldCC')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('h1mesuke/vim-alignta')
+  call dein#add('haya14busa/vim-edgemotion')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('jszakmeister/markdown2ctags')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('nishigori/increment-activator')
+  call dein#add('osyo-manga/vim-anzu')
+  call dein#add('rhysd/clever-f.vim')
+  call dein#add('tanabe/ToggleCase-vim')
+  call dein#add('tpope/vim-fugitive')
+
+  call dein#add('tpope/vim-vividchalk')
+
+  call dein#end()
+  call dein#save_state()
+endif
 
 filetype plugin indent on
-syntax on
+syntax enable
 
-NeoBundleCheck
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
 
 " LeafCage/foldCC
 " @see http://d.hatena.ne.jp/leafcage/20111223/1324705686
@@ -62,9 +57,6 @@ let g:ctrlp_custom_ignore = {
 \ 'dir': '\v[\/](node_modules|vendor/assets/bower_components|tmp/cache)$',
 \ 'file': '\v\.(png|jpg|gif|ico|swf|zip|gz|log)$'
 \ }
-
-" glidenote/nogistub.vim
-let g:nogistub_open_browser_after_post = 1
 
 " haya14busa/vim-edgemotion
 map <C-j> <Plug>(edgemotion-j)
@@ -87,32 +79,12 @@ let g:lightline.active = {
 \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 let g:lightline.component_function = { 'anzu': 'anzu#search_status' }
 
-" kana/vim-smartinput
-" @see http://qiita.com/hara/items/1d30f6a6354fa480184b
-" module, class, def, if, unless, case, while, until, for, begin に対応する end を補完
-call smartinput#define_rule({
-\ 'at': '^\%(.*=\)\?\s*\zs\%(module\|class\|def\|if\|unless\|case\|while\|until\|for\|begin\)\>\%(.*[^.:@$]\<end\>\)\@!.*\%#$',
-\ 'char': '<CR>',
-\ 'input': '<CR>end<Esc>O',
-\ 'filetype': ['ruby'],
-\ 'syntax': ['rubyBlock']
-\ })
-
-" do に対応する end を補完
-call smartinput#define_rule({
-\ 'at': '\<do\ze\%(\s*|.*|\)\=\s*\%#$',
-\ 'char': '<CR>',
-\ 'input': '<CR>end<Esc>O',
-\ 'filetype': ['ruby'],
-\ 'syntax': ['rubyDoBlock']
-\ })
-
 " majutsushi/tagbar
 nnoremap <silent> <C-o> :<C-u>TagbarToggle<CR>
 " @see https://github.com/majutsushi/tagbar/wiki#markdown
 let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : $HOME . '/.vim/bundle/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsbin' : $HOME . '/.vim/bundle/repos/github.com/jszakmeister/markdown2ctags/markdown2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',
@@ -147,7 +119,6 @@ let g:increment_activator_filetype_candidates = {
     \ ],
     \ }
 
-
 " osyo-manga/vim-anzu
 nmap n <Plug>(anzu-n)zvzz
 nmap N <Plug>(anzu-N)zvzz
@@ -166,31 +137,8 @@ let g:clever_f_fix_key_direction = 1
 " @see http://blog.kaihatsubu.com/?p=2049
 nnoremap <silent> K :<C-u>call ToggleCase()<CR>
 
-" thinca/vim-quickrun
-augroup QuickrunRSpec
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-  " @see http://qiita.com/joker1007/items/69035c454de416849b8a
-  nnoremap <expr><silent> <Leader>lr "<Esc>:QuickRun -cmdopt \"-l " . line(".") . "\"<CR>"
-augroup END
-let g:quickrun_config = {}
-let g:quickrun_config._ = { 'runner' : 'vimproc' }
-let g:quickrun_config['ruby.rspec'] = {
-    \ 'command' : 'rspec',
-    \ 'exec' : 'bundle exec %c %o %s %a',
-    \ 'split' : '',
-    \ 'runner/vimproc/updatetime' : 10,
-    \ }
-let g:quickrun_config['processing'] =  {
-    \ 'command' : 'processing-java',
-    \ 'exec' : '%c --sketch=%s:p:h --output=%s:p:h/build --run --force',
-    \ 'split' : '',
-    \ 'runner/vimproc/updatetime' : 10,
-    \ }
-
 " =====================================================================
-" basic options
-" ----------------------------------------------------------------------
+
 set noswapfile
 set expandtab
 set tabstop=2
@@ -264,15 +212,6 @@ function! RTrim()
   %s/\s\+$//e
   call setpos(".", s:cursor)
 endfunction
-
-" ======================================================================
-" filetype
-" ----------------------------------------------------------------------
-" markdown は 4 スペ
-autocmd FileType mkd setlocal tabstop=4 softtabstop=4 shiftwidth=4
-
-" xml の folding
-let g:xml_syntax_folding = 1
 
 " ======================================================================
 " color
