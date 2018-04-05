@@ -1,80 +1,19 @@
-#!/bin/sh
-brew update
-brew upgrade
-
-brew tap homebrew/services
-
-# peco
-brew install peco
-brew install migemogrep
-
-# opencv
-brew tap homebrew/science
-brew install opencv
-
-brew install coreutils
-
-brew install readline
-brew install icu4c
-brew install cmake
-brew install libgit2
-
-brew install mecab
-brew install mecab-ipadic
-
 brew install git
-brew install git-now
-brew install mercurial
-
-brew install ruby-build
-brew install chruby
-brew install node
-brew install go
-brew cask install java
-brew install phantomjs
-
-brew install mysql
-brew install redis
-brew install memcached
-brew install nginx
-
 brew install zsh
-brew install wget
-brew install pstree
-brew install tree
-brew install watch
-brew install nkf
-brew install tcpflow
-brew install tig --with-docs
 brew install byobu
-brew install ag
-brew install jq
-brew install httpie
-brew install vim --override-system-vi
-brew install libtiff
-brew install ghostscript
-brew install imagemagick --with-libtiff
-brew install apktool
-brew install jad
-brew install dex2jar
-brew install xcproj
-brew install ttyrec
-brew install ffmpeg --with-fdk-aac --with-theora --with-libvorbis
-brew install sox
-brew install taglib
-brew install graphviz
-brew install plantuml
-brew install ctags
-brew install pidcat
+brew install python@2
+brew install peco
+brew install ghq
+brew install tig
+brew install chruby
+brew install ruby-build
+brew install vim --with-override-system-vi
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+brew install the_silver_searcher
+brew install imagemagick@6
+brew link --force imagemagick@6
+brew install mysql
+brew install postgresql
+brew install yarn
+brew install Caskroom/cask/docker
 brew install mycli
-brew install mitmproxy
-brew install git-secrets
-
-brew install Caskroom/cask/google-chrome
-brew install Caskroom/cask/virtualbox
-brew install Caskroom/cask/skype
-brew install Caskroom/cask/libreoffice
-brew install Caskroom/cask/processing
-brew install Caskroom/cask/dockertoolbox
-brew install Caskroom/cask/fluid
-brew install Caskroom/cask/processing
