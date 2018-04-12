@@ -17,7 +17,7 @@ function history-all { history -E 1 }
 
 REPORTTIME=3
 
-export CDPATH=$HOME
+export CDPATH=.:$HOME
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
