@@ -17,3 +17,26 @@ brew install postgresql
 brew install yarn
 brew install Caskroom/cask/docker
 brew install mycli
+brew install cpanminus
+brew install tree
+brew install caskroom/cask/google-chrome
+brew install caskroom/cask/vivaldi
+brew install cmake
+brew install redis
+brew install memcached
+brew install plenv
+brew install perl-build
+brew install telnet
+brew install --HEAD motemen/furoshiki2/furoshiki2
+brew install jq
+brew install tcpdump
+brew install tree
+brew install percona-toolkit
+brew install caskroom/cask/macdown
+brew install highlight
+brew install abcde --with-flac
+brew install libdiscid
+brew install glyr
+brew install libxml2
+brew link libxml2 --force
+brew install guetzli
