@@ -44,6 +44,7 @@ alias -g RT='RAILS_ENV=test'
 alias -g RP='RAILS_ENV=production'
 alias -g CSU='| cut -d":" -f1 | sort | uniq'
 alias -g SUS='| sort | uniq -c | sort -nr'
+alias -g V=' 2>&1 | vim -'
 alias rm="gomi"
 alias c="ctop"
 alias g="git"
