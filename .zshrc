@@ -114,11 +114,9 @@ chruby 2.6.0-dev
 # spring
 export DISABLE_SPRING=1
 
-# gopath
-if [ -z "${GOPATH:-}" ]; then
-  export GOPATH=$HOME/go
-  PATH=$PATH:$GOPATH/bin
-fi
+# go
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 
 # peco
