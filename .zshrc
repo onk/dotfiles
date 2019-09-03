@@ -119,6 +119,7 @@ if [ -z "${GOPATH:-}" ]; then
   export GOPATH=$HOME/go
   PATH=$PATH:$GOPATH/bin
 fi
+export GO111MODULE=on
 
 # peco
 if [ -f ~/.zsh/my_peco.zsh ]; then
