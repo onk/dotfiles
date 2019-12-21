@@ -17,3 +17,4 @@ bind blame g move-first-line
 bind blame G move-last-line
 bind diff <Ctrl-n> :/^@@
 bind diff <Ctrl-p> :?^@@
+bind main I ?git rebase -i %(commit)
