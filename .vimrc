@@ -10,6 +10,7 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add($HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('AndrewRadev/linediff.vim')
   call dein#add('LeafCage/foldCC')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('junegunn/vim-easy-align')
