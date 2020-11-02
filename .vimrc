@@ -186,9 +186,6 @@ nnoremap q: <NOP>
 " Esc 2連打で nohlsearch
 nnoremap <silent><Esc><Esc> :<C-u>nohlsearch<CR>
 
-" regex very magic
-nnoremap / /\v
-
 " テキストの整形方法(改行時の自動コメントアウト等)を調整
 autocmd FileType * setlocal formatoptions=tcqnlmMj
 
