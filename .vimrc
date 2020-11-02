@@ -94,9 +94,6 @@ let g:increment_activator_filetype_candidates = {
     \ '_' : [
     \   ['月', '火', '水', '木', '金', '土', '日'],
     \ ],
-    \ 'gitrebase': [
-    \   ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
-    \ ],
     \ 'ruby.rspec': [
     \   ['it', 'fit', 'xit'],
     \   ['get', 'post', 'put', 'delete'],
