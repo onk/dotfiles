@@ -16,7 +16,6 @@ if dein#load_state($HOME . '/.cache/dein')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('haya14busa/vim-edgemotion')
   call dein#add('itchyny/lightline.vim')
-  call dein#add('jszakmeister/markdown2ctags')
   call dein#add('majutsushi/tagbar')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('nishigori/increment-activator')
@@ -82,21 +81,6 @@ let g:lightline.component_function = { 'anzu': 'anzu#search_status' }
 
 " majutsushi/tagbar
 nnoremap <silent> <C-o> :<C-u>TagbarToggle<CR>
-" @see https://github.com/majutsushi/tagbar/wiki#markdown
-let g:tagbar_type_markdown = {
-    \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : $HOME . '/.vim/bundle/repos/github.com/jszakmeister/markdown2ctags/markdown2ctags.py',
-    \ 'ctagsargs' : '-f - --sort=yes',
-    \ 'kinds' : [
-        \ 's:sections',
-        \ 'i:images'
-    \ ],
-    \ 'sro' : '|',
-    \ 'kind2scope' : {
-        \ 's' : 'section',
-    \ },
-    \ 'sort': 0,
-\ }
 
 " nathanaelkane/vim-indent-guides
 let indent_guides_auto_colors = 0
