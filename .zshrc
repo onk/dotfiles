@@ -169,3 +169,8 @@ function www() {
     php -S 0.0.0.0:5000
   fi
 }
+
+# local
+if [ -f ~/.zsh/local.zsh ]; then
+  source ~/.zsh/local.zsh
+fi
