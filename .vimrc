@@ -206,6 +206,46 @@ endif
 autocmd QuickfixCmdPost grep copen
 
 " ======================================================================
+" filetype
+" ----------------------------------------------------------------------
+" perl は 4 スペ
+autocmd FileType perl setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup filetypedetect
+    autocmd! BufNewFile,BufRead *.t,*.psgi,cpanfile setf perl
+augroup END
+
+" .pm ファイルを作ったときのテンプレート
+function! s:pm_template()
+    let path = substitute(expand('%'), '.*lib/', '', 'g')
+    let path = substitute(path, '[\\/]', '::', 'g')
+    let path = substitute(path, '\.pm$', '', 'g')
+
+    execute ':normal a' . 'package ' . path . ';'
+    call append(1, 'use strict;')
+    call append(2, 'use warnings;')
+    call append(3, '')
+    call append(4, '')
+    call append(5, '')
+    call append(6, '1;')
+    call cursor(5, 0)
+    echomsg path
+endfunction
+
+function! s:pl_template()
+    execute ':normal a' . 'use v5.20;'
+    call append(1, 'use strict;')
+    call append(2, 'use warnings;')
+    call append(3, 'use utf8;')
+    call append(4, '')
+    call append(5, '')
+    call cursor(6, 0)
+endfunction
+autocmd BufNewFile *.pm call s:pm_template()
+autocmd BufNewFile *.pl call s:pl_template()
+
+let perl_fold=1
+
+" ======================================================================
 " color
 " ----------------------------------------------------------------------
 set t_Co=256
