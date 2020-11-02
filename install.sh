@@ -13,3 +13,4 @@ ln -sf $DOTFILES_DIR/.gemrc $HOME/.gemrc
 ln -sf $DOTFILES_DIR/.pryrc $HOME/.pryrc
 ln -sfn $DOTFILES_DIR/.git_hooks $HOME/.git_hooks
 ln -sfn $DOTFILES_DIR/.peco $HOME/.peco
+ln -sfn $DOTFILES_DIR/.abcde.conf $HOME/.abcde.conf
