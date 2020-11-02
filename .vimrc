@@ -3,11 +3,11 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=$HOME/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state($HOME . '/.vim/bundle')
-  call dein#begin($HOME . '/.vim/bundle')
-  call dein#add($HOME . '/.vim/bundle/repos/github.com/Shougo/dein.vim')
+if dein#load_state($HOME . '/.cache/dein')
+  call dein#begin($HOME . '/.cache/dein')
+  call dein#add($HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('LeafCage/foldCC')
