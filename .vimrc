@@ -12,7 +12,7 @@ if dein#load_state($HOME . '/.cache/dein')
   " Add or remove your plugins here:
   call dein#add('LeafCage/foldCC')
   call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('h1mesuke/vim-alignta')
+  call dein#add('junegunn/vim-easy-align')
   call dein#add('haya14busa/vim-edgemotion')
   call dein#add('itchyny/lightline.vim')
   call dein#add('jszakmeister/markdown2ctags')
