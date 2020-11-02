@@ -196,6 +196,15 @@ function! RTrim()
   call setpos(".", s:cursor)
 endfunction
 
+" ripgrep で grep する
+" http://hogeai.hatenablog.com/entry/2018/03/04/201744
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+" grep したら copen
+autocmd QuickfixCmdPost grep copen
+
 " ======================================================================
 " color
 " ----------------------------------------------------------------------
