@@ -108,6 +108,11 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
+# plenv
+if which plenv > /dev/null; then
+  eval "$(plenv init - zsh)"
+fi
+
 # chruby
 source /usr/local/share/chruby/chruby.sh
 chruby 3.0.0-dev
