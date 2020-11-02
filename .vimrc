@@ -160,6 +160,10 @@ vnoremap gk k
 
 nnoremap Y y$
 
+" 選択範囲を上下移動
+vnoremap <DOWN> :m'>+<CR>gv=gv
+vnoremap <UP> :m-2<CR>gv=gv
+
 " window 移動
 nnoremap wh <C-w>h
 nnoremap wj <C-w>j
