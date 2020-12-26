@@ -117,8 +117,9 @@ fi
 source /usr/local/share/chruby/chruby.sh
 chruby 3.1.0-dev
 
-# spring
+# ruby
 export DISABLE_SPRING=1
+export DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 # go
 export GOPATH=$(go env GOPATH)
