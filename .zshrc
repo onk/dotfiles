@@ -115,7 +115,7 @@ fi
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
-chruby 3.0.0-dev
+chruby 3.1.0-dev
 
 # spring
 export DISABLE_SPRING=1
