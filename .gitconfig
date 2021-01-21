@@ -22,6 +22,7 @@
   fix = commit -v --amend
   md = merge origin/develop --ff
   mm = merge origin/master --ff
+  mn = merge origin/main --ff
   n = now --all --stat
   ph = push origin HEAD
   phf = push origin HEAD --force-with-lease
@@ -31,6 +32,7 @@
   remotes = remote -v
   ri = rebase -i
   rom = rebase origin/master
+  ron = rebase origin/main
   rp = rebase -p
   s = status -sb
   sweep-branch-develop = !git branch --delete $(git branch --merged origin/develop | egrep -v '^(\\*| ) develop$')
