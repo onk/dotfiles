@@ -20,6 +20,7 @@
   ds = diff --staged -b
   f = fetch -p
   fix = commit -v --amend
+  gh = ! sh -c 'git fetch origin pull/$1/head:GH-$1 && git switch GH-$1' --
   md = merge origin/develop --ff
   mm = merge origin/master --ff
   mn = merge origin/main --ff
