@@ -21,6 +21,8 @@
   f = fetch -p
   fix = commit -v --amend
   gh = ! sh -c 'git fetch origin pull/$1/head:GH-$1 && git switch GH-$1' --
+  gone-branch-develop = !git branch --delete $(git branch --merged origin/develop | egrep -v '^(\\*| ) develop$')
+  gone-branch-master = !git branch --delete $(git branch --merged origin/master | egrep -v '^(\\*| ) master$')
   md = merge origin/develop --ff
   mm = merge origin/master --ff
   mn = merge origin/main --ff
@@ -36,8 +38,6 @@
   ron = rebase origin/main
   rp = rebase -p
   s = status -sb
-  sweep-branch-develop = !git branch --delete $(git branch --merged origin/develop | egrep -v '^(\\*| ) develop$')
-  sweep-branch-master = !git branch --delete $(git branch --merged origin/master | egrep -v '^(\\*| ) master$')
   sq = push sqale sqale:master
 
 [core]
