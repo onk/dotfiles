@@ -9,8 +9,12 @@ set main-view = line-number:yes,interval=10 date:local=true author:full,width=18
 ## bind
 bind main g move-first-line
 bind main G move-last-line
+bind main <Ctrl-f> move-page-down
+bind main <Ctrl-b> move-page-up
 bind diff g move-first-line
 bind diff G move-last-line
+bind diff <Ctrl-f> move-page-down
+bind diff <Ctrl-b> move-page-up
 bind stage g move-first-line
 bind stage G move-last-line
 bind blame g move-first-line
