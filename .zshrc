@@ -64,7 +64,8 @@ alias com="git checkout master"
 alias cow="git checkout working"
 alias my="mycli -u root"
 alias tree="exa --tree -F"
-alias dc="docker-compose"
+alias d="docker"
+alias dc="docker compose"
 alias cdr="cd \`git rev-parse --show-toplevel\`"
 function v() {vi -p ${${=*/:/ +}/:*}}
 
