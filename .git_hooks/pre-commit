@@ -6,6 +6,12 @@ if [ "${branch##refs/heads/}" = "master" ]; then
   exit 1
 fi
 
+if [ "${branch##refs/heads/}" = "main" ]; then
+  echo "Can't commit on master branch."
+  echo "Please commit on topic branch."
+  exit 1
+fi
+
 if [ "${branch##refs/heads/}" = "develop" ]; then
   echo "Can't commit on develop branch."
   echo "Please commit on topic branch."
