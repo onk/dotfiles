@@ -116,7 +116,7 @@ if which plenv > /dev/null; then
 fi
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
+source /opt/homebrew/share/chruby/chruby.sh
 chruby 3.1.0-dev
 
 # ruby
