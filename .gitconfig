@@ -38,7 +38,6 @@
   ron = rebase origin/main
   rp = rebase -p
   s = status -sb
-  sq = push sqale sqale:master
 
 [core]
   excludesfile = ~/.gitignore_global
