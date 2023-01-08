@@ -28,7 +28,7 @@
   mn = merge origin/main --ff
   n = now --all --stat
   ph = push origin HEAD
-  phf = push origin HEAD --force-with-lease
+  phf = push origin HEAD --force-with-lease --force-if-includes
   r = rebase
   rc = rebase --continue
   re = reset HEAD~1
