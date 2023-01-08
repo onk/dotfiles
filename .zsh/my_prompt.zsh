@@ -1,4 +1,7 @@
 prompt bigfade "%(?.red.magenta)"
+if [ -n "$AWS_PROFILE" ]; then
+  prompt bigfade cyan
+fi
 
 # vcs_info
 # http://yoshiko.hatenablog.jp/entry/2014/04/02/zsh%E3%81%AE%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%ABgit%E3%81%AE%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%92%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E5%8F%AF%E6%84%9B%E3%81%8F
@@ -16,6 +19,12 @@ zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 
+aws_profile_string() {
+  if [ -n "$AWS_PROFILE" ]; then
+    echo "%F{1}($AWS_PROFILE)%f"
+  fi
+}
+
 cruby_version_string() {
   echo "%F{3}($(chruby | grep '\*' | tr -d '* '))%f"
 }
@@ -27,4 +36,4 @@ vcs_info_wrapper() {
     echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
   fi
 }
-RPROMPT=$'$(cruby_version_string) $(vcs_info_wrapper)'
+RPROMPT=$'$(aws_profile_string) $(cruby_version_string) $(vcs_info_wrapper)'
