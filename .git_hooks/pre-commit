@@ -1,19 +1,9 @@
 #!/bin/sh
 branch="$(git symbolic-ref HEAD 2>/dev/null)" || "$(git describe --contains --all HEAD)"
-if [ "${branch##refs/heads/}" = "master" ]; then
-  echo "Can't commit on master branch."
-  echo "Please commit on topic branch."
-  exit 1
-fi
-
-if [ "${branch##refs/heads/}" = "main" ]; then
-  echo "Can't commit on master branch."
-  echo "Please commit on topic branch."
-  exit 1
-fi
-
-if [ "${branch##refs/heads/}" = "develop" ]; then
-  echo "Can't commit on develop branch."
-  echo "Please commit on topic branch."
-  exit 1
-fi
+for protected_branch in "master" "main" "develop"; do
+  if [ "${branch##refs/heads/}" = "$protected_branch" ]; then
+    echo "Can't commit on $protected_branch branch."
+    echo "Please commit on topic branch."
+    exit 1
+  fi
+done
