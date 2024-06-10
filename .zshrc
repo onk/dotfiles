@@ -117,7 +117,7 @@ fi
 
 # chruby
 source /opt/homebrew/share/chruby/chruby.sh
-chruby 3.2.0-dev
+chruby ruby-dev
 
 # ruby
 export DISABLE_SPRING=1
