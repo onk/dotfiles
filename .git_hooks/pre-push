@@ -2,16 +2,10 @@
 # @see http://thinca.hatenablog.com/entry/20150306/1425639218
 while read local_ref local_sha1 remote_ref remote_sha1
 do
-  if [ "${remote_ref##refs/heads/}" = "master" ]; then
-    echo "Can't push to master branch."
-    exit 1
-  fi
-  if [ "${remote_ref##refs/heads/}" = "main" ]; then
-    echo "Can't push to master branch."
-    exit 1
-  fi
-  if [ "${remote_ref##refs/heads/}" = "develop" ]; then
-    echo "Can't push to develop branch."
-    exit 1
-  fi
+  for protected_branch in "master" "main" "develop"; do
+    if [ "${remote_ref##refs/heads/}" = "$protected_branch" ]; then
+      echo "Can't push to $protected_branch branch."
+      exit 1
+    fi
+  done
 done
