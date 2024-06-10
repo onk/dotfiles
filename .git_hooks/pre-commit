@@ -1,6 +1,6 @@
 #!/bin/sh
 branch="$(git symbolic-ref HEAD 2>/dev/null)" || "$(git describe --contains --all HEAD)"
-for protected_branch in "master" "main" "develop"; do
+for protected_branch in "master" "main" "develop" "devel"; do
   if [ "${branch##refs/heads/}" = "$protected_branch" ]; then
     echo "Can't commit on $protected_branch branch."
     echo "Please commit on topic branch."

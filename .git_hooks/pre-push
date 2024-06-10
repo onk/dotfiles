@@ -2,7 +2,7 @@
 # @see http://thinca.hatenablog.com/entry/20150306/1425639218
 while read local_ref local_sha1 remote_ref remote_sha1
 do
-  for protected_branch in "master" "main" "develop"; do
+  for protected_branch in "master" "main" "develop" "devel"; do
     if [ "${remote_ref##refs/heads/}" = "$protected_branch" ]; then
       echo "Can't push to $protected_branch branch."
       exit 1
