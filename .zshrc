@@ -71,11 +71,11 @@ function v() {vi -p ${${=*/:/ +}/:*}}
 
 case "${OSTYPE}" in
   darwin*)
-    alias ll='ls -lFG'
+    alias l='ls -lFG'
     alias lsd='ls -lFG | grep -e "^d" --color=never'
     ;;
   linux*)
-    alias ll='ls -lvF --color'
+    alias l='ls -lvF --color'
     alias lsd='ls -lvF --color | grep -e "^d" --color=never'
     ;;
 esac
