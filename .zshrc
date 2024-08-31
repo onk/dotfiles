@@ -48,6 +48,7 @@ alias -g V=' 2>&1 | vim -'
 alias rm="gomi"
 alias b="bat --style=plain"
 alias c="ctop"
+alias f="git fetch -p"
 alias g="git"
 alias t="tig"
 alias h="hivemind"
