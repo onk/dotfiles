@@ -112,6 +112,7 @@ bindkey '^m' do_enter
 
 # homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
+export HOMEBREW_NO_ENV_HINTS=1
 
 # plenv
 if which plenv > /dev/null; then
