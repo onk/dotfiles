@@ -39,6 +39,7 @@ setopt NO_FLOW_CONTROL
 bindkey "^F" forward-word
 bindkey "^B" backward-word
 
+alias "$"=""
 alias -g RD='RAILS_ENV=development'
 alias -g RT='RAILS_ENV=test'
 alias -g RP='RAILS_ENV=production'
