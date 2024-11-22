@@ -98,6 +98,7 @@ function chpwd() {
 # http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
 function do_enter() {
     if [ -n "$BUFFER" ]; then
+        zle reset-prompt # PROMPT を実行時のタイプスタンプにするため
         zle accept-line
         return 0
     fi
