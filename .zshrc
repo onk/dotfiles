@@ -47,6 +47,7 @@ alias -g CSU='| cut -d":" -f1 | sort | uniq'
 alias -g SUS='| sort | uniq -c | sort -nr'
 alias -g V=' 2>&1 | vim -'
 alias rm="gomi"
+alias a="git add"
 alias b="bat --style=plain"
 alias c="ctop"
 alias f="git fetch -p"
