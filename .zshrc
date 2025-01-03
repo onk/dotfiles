@@ -70,6 +70,7 @@ alias tree="eza --tree -F"
 alias d="docker"
 alias dc="docker compose"
 alias cdr="cd \`git rev-parse --show-toplevel\`"
+alias sort="LC_COLLATE=C sort"
 function v() {vi -p ${${=*/:/ +}/:*}}
 
 case "${OSTYPE}" in
