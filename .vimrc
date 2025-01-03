@@ -74,7 +74,8 @@ let g:lightline.enable = {
 " anzu 追加
 let g:lightline.active = {
 \ 'left': [ [ 'mode', 'paste' ],
-\           [ 'readonly', 'relativepath', 'modified', 'anzu' ] ],
+\           [ 'readonly', 'relativepath', 'modified' ],
+\           [ 'anzu' ] ],
 \ 'right': [ [ 'lineinfo' ],
 \            [ 'percent' ],
 \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
