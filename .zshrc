@@ -139,9 +139,9 @@ export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 
-# peco
-if [ -f ~/.zsh/my_peco.zsh ]; then
-  source ~/.zsh/my_peco.zsh
+# fzf
+if [ -f ~/.zsh/my_fzf.zsh ]; then
+  source ~/.zsh/my_fzf.zsh
 fi
 
 # http://ukstudio.jp/2015/03/26/open_pull_request/
