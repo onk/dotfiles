@@ -21,7 +21,7 @@ function peco-select-history() {
   BUFFER=$(\history -n -100000 | \
     eval $tac | \
     awk '!a[$0]++' | \
-    peco --prompt "HISTORY>" --query "$LBUFFER")
+    peco --prompt "HISTORY>" --query "$LBUFFER" | gsed -e 's/\\n/\n/g' | gsed -e 's/\\t/\t/g')
   CURSOR=$#BUFFER
   zle clear-screen
 }
