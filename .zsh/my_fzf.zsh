@@ -1,5 +1,5 @@
-# pecoとghqでローカルのリポジトリクローンに飛ぶ
-function peco-src () {
+# fzfとghqでローカルのリポジトリクローンに飛ぶ
+function fzf-src () {
   local selected_dir=$(ghq list --full-path | peco --prompt "PROJECT>" --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
@@ -7,11 +7,11 @@ function peco-src () {
   fi
   zle clear-screen
 }
-zle -N peco-src
-bindkey '^s' peco-src
+zle -N fzf-src
+bindkey '^s' fzf-src
 
-# C-r を peco で行う
-function peco-select-history() {
+# C-r を fzf で行う
+function fzf-select-history() {
   local tac
   if which tac > /dev/null; then
     tac="tac"
@@ -25,33 +25,33 @@ function peco-select-history() {
   CURSOR=$#BUFFER
   zle clear-screen
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
 
 # B でブランチ選択
-function peco-git-branch() {
+function fzf-git-branch() {
   git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"
 }
-alias -g B='$(peco-git-branch)'
+alias -g B='$(fzf-git-branch)'
 
 # F で git status からファイル選択
-function peco-git-changed-files() {
+function fzf-git-changed-files() {
   git status -s | peco --prompt "multi: C-Space>" | awk '{print $2}'
 }
-alias -g F='$(peco-git-changed-files)'
+alias -g F='$(fzf-git-changed-files)'
 
 # vv で git 管理下のファイルを vim で開く。更新順に並び替えしてある
-function peco-git-ls-files() {
+function fzf-git-ls-files() {
   git ls-files | egrep "\.(rb|slim|haml|erb|sass|scss|coffee|js|tsx?|pm|pl|t)$"  | xargs ls -At | peco --prompt "FILES>"
 }
-alias vv='vim -p $(peco-git-ls-files)'
+alias vv='vim -p $(fzf-git-ls-files)'
 
-# genymotion_peco
-function genymotion_peco() {
+# genymotion_fzf
+function genymotion_fzf() {
   local player="/Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS/player"
   # local つけるとエラー
   # "Google Nexus 5 - 4.4.4 - API 19 - 1080x1920"
-  # genymotion_peco:local:2: not an identifier: 5
+  # genymotion_fzf:local:2: not an identifier: 5
   vm_name=`VBoxManage list vms | peco | gsed "s/\"\(.*\)\".*/\1/"`
   if [ -n "$vm_name" ]; then
     echo "boot $vm_name"
