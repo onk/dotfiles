@@ -1,6 +1,6 @@
 # fzfとghqでローカルのリポジトリクローンに飛ぶ
 function fzf-src () {
-  local selected_dir=$(ghq list --full-path | sk --no-mouse --prompt "PROJECT>" --query "$LBUFFER" --preview \
+  local selected_dir=$(ghq list --full-path | sk --exact --no-mouse --prompt "PROJECT>" --query "$LBUFFER" --preview \
     '[[ -f {}/README.md ]] && bat --style=numbers --color=always {}/README.md || echo "No README found"' --preview-window=right:40%
   )
   if [ -n "$selected_dir" ]; then
@@ -23,7 +23,7 @@ function fzf-select-history() {
   BUFFER=$(\history -n -100000 | \
     eval $tac | \
     awk '!a[$0]++' | \
-    sk -t score,index --no-mouse --prompt "HISTORY>" --query "$LBUFFER" | gsed -e 's/\\n/\n/g' | gsed -e 's/\\t/\t/g')
+    sk --exact -t score,index --no-mouse --prompt "HISTORY>" --query "$LBUFFER" | gsed -e 's/\\n/\n/g' | gsed -e 's/\\t/\t/g')
   CURSOR=$#BUFFER
   zle clear-screen
 }
