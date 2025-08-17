@@ -23,7 +23,7 @@ function fzf-select-history() {
   BUFFER=$(\history -n -100000 | \
     eval $tac | \
     awk '!a[$0]++' | \
-    sk --no-mouse --prompt "HISTORY>" --query "$LBUFFER" | gsed -e 's/\\n/\n/g' | gsed -e 's/\\t/\t/g')
+    sk -t score,index --no-mouse --prompt "HISTORY>" --query "$LBUFFER" | gsed -e 's/\\n/\n/g' | gsed -e 's/\\t/\t/g')
   CURSOR=$#BUFFER
   zle clear-screen
 }
