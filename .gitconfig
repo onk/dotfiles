@@ -23,6 +23,7 @@
   gh = ! sh -c 'git fetch origin pull/$1/head:GH-$1 && git switch GH-$1' --
   gone-branch-develop = !git branch --delete $(git branch --merged origin/develop | egrep -v '^(\\*| ) develop$')
   gone-branch-master = !git branch --delete $(git branch --merged origin/master | egrep -v '^(\\*| ) master$')
+  gone = !git branch --delete $(git branch --merged origin/HEAD | grep -v '^*')
   md = merge origin/develop --ff
   mm = merge origin/master --ff
   mn = merge origin/main --ff
