@@ -1,10 +1,10 @@
 # fzfとghqでローカルのリポジトリクローンに飛ぶ
 function fzf-src () {
-  local selected_dir=$(ghq list --full-path | sk --exact --no-mouse --prompt "PROJECT>" --query "$LBUFFER" --preview \
+  local selected_dir=$(ghq list | sk --exact --no-mouse --prompt "PROJECT>" --query "$LBUFFER" --preview \
     '[[ -f {}/README.md ]] && bat --style=numbers --color=always {}/README.md || echo "No README found"' --preview-window=right:40%
   )
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
+  if [ -n "$(ghq root)/$selected_dir" ]; then
+    BUFFER="cd $(ghq root)/${selected_dir}"
     zle accept-line
   fi
   zle clear-screen
