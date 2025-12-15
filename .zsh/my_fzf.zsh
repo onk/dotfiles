@@ -1,7 +1,7 @@
 # fzfとghqでローカルのリポジトリクローンに飛ぶ
 function fzf-src () {
   local selected_dir=$(ghq list | sk --exact --no-mouse --prompt "PROJECT>" --query "$LBUFFER" --preview \
-    '[[ -f {}/README.md ]] && bat --style=numbers --color=always {}/README.md || echo "No README found"' --preview-window=right:40%
+    '[[ -f $(ghq root)/{}/README.md ]] && bat --style=numbers --color=always $(ghq root)/{}/README.md || echo "No README found"' --preview-window=right:40%
   )
   if [ -n "$(ghq root)/$selected_dir" ]; then
     BUFFER="cd $(ghq root)/${selected_dir}"
