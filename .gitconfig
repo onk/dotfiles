@@ -35,8 +35,7 @@
   re = reset HEAD~1
   remotes = remote -v
   ri = rebase -i
-  rom = rebase origin/master
-  ron = rebase origin/main
+  roh = rebase origin/HEAD
   rp = rebase -p
   s = status -sb
 
